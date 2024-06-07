@@ -32,10 +32,16 @@ jobs:
       uses: gradle/gradle-build-action@v3
       with:
         arguments: check
+    - uses: actions/upload-artifact@v4
+      if: success() || failure()
+      with:
+        name: test-results
+        path: solutions/build/**/TEST-*.xml
     - name: Test Report
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
+        artifact: test-results
         name: Junit Test
         path: solutions/build/**/TEST-*.xml    # Path to test results
         reporter: java-junit        # Format of test results
