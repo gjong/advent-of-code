@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.IntStream;
 
-@Day(day = 5, year = 2023)
+@Day(day = 5, year = 2023, name = "If You Give A Seed A Fertilizer")
 public class Day05 implements DaySolver {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());

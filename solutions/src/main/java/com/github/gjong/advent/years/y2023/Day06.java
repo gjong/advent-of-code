@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-@Day(day = 6, year = 2023)
+@Day(day = 6, year = 2023, name = "Wait For It")
 public class Day06 implements DaySolver {
 
     private final InputLoader inputLoader = new InputLoader(2023, 6);

@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-@Day(day = 12, year = 2023)
+@Day(day = 12, year = 2023, name = "Hot Springs")
 public class Day12 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 12);
     private final Validator validator = new Validator(2023, 12);

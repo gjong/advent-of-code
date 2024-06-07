@@ -5,7 +5,7 @@ import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 
-@Day(day = 2, year = 2023)
+@Day(day = 2, year = 2023, name = "Cube Conundrum")
 public class Day02 implements DaySolver {
 
     record Game(int number, int green, int red, int blue) {

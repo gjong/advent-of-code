@@ -9,7 +9,7 @@ import java.util.*;
 
 import static java.util.stream.Collectors.toSet;
 
-@Day(year = 2023, day = 3)
+@Day(year = 2023, day = 3, name = "Gear Ratios")
 public class Day03 implements DaySolver {
     private sealed interface Position permits NumberWithPos, SymbolPos {
     }

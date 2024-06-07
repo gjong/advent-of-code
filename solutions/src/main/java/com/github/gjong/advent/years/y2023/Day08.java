@@ -12,7 +12,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Day(day = 8, year = 2023)
+@Day(day = 8, year = 2023, name = "Haunted Wasteland")
 public class Day08 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 8);
     private final Validator validator = new Validator(2023, 8);

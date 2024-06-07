@@ -15,7 +15,7 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-@Day(year = 2023, day = 16)
+@Day(year = 2023, day = 16, name = "The Floor Will Be Lava")
 public class Day16 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 16);
     private final Validator validator = new Validator(2023, 16);

@@ -9,7 +9,7 @@ import com.github.gjong.advent.common.Validator;
 import java.util.List;
 import java.util.stream.Stream;
 
-@Day(day = 13, year = 2023)
+@Day(day = 13, year = 2023, name = "Point of Incidence")
 public class Day13 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 13);
     private final Validator validator = new Validator(2023, 13);

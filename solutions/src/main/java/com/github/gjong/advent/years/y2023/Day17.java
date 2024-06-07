@@ -9,7 +9,7 @@ import com.github.gjong.advent.geo.Point;
 
 import java.util.*;
 
-@Day(day = 17, year = 2023)
+@Day(day = 17, year = 2023, name = "Clumsy Crucible")
 public class Day17 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 17);
     private final Validator validator = new Validator(2023, 17);

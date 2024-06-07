@@ -10,4 +10,6 @@ public @interface Day {
     int day();
 
     int year();
+
+    String name() default "";
 }

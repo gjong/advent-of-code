@@ -9,7 +9,7 @@ import com.github.gjong.advent.geo.Point;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Day(day = 10, year = 2023)
+@Day(day = 10, year = 2023, name = "Pipe Maze")
 public class Day10 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 10);
     private final Validator validator = new Validator(2023, 10);

@@ -9,7 +9,7 @@ import com.github.gjong.advent.geo.Point;
 import java.util.ArrayList;
 import java.util.List;
 
-@Day(day = 11, year = 2023)
+@Day(day = 11, year = 2023, name = "Cosmic Expansion")
 public class Day11 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 11);
     private final Validator validator = new Validator(2023, 11);

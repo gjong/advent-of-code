@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@Day(day = 9, year = 2023)
+@Day(day = 9, year = 2023, name = "Mirage Maintenance")
 public class Day09 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 9);
     private final Validator validator = new Validator(2023, 9);

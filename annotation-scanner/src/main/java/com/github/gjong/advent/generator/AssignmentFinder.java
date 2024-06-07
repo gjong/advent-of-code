@@ -1,19 +1,18 @@
 package com.github.gjong.advent.generator;
 
 import com.github.gjong.advent.Day;
-import org.slf4j.LoggerFactory;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
-import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
-import javax.tools.Diagnostic;
+import javax.tools.StandardLocation;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
@@ -28,45 +27,34 @@ public class AssignmentFinder extends AbstractProcessor {
             return false;
         }
 
-        processingEnv.getMessager()
-                .printMessage(Diagnostic.Kind.OTHER, "Searching for assignments in the codebase.");
+        var packages = new HashMap<String, Set<Integer>>();
 
-        var solutionInstructions = roundEnv.getElementsAnnotatedWith(Day.class)
-                .stream()
-                .map(this::convertToInstruction)
-                .toList();
-
-        createAssignmentClass(solutionInstructions);
-
-        processCompleted = true;
-        return true;
-    }
-
-    private String convertToInstruction(Element element) {
-        var assignmentPackage = processingEnv.getElementUtils().getPackageOf(element).getQualifiedName();
-        var className = element.getSimpleName().toString();
-        return "new %s.%s()".formatted(assignmentPackage, className);
-    }
-
-    private void createAssignmentClass(List<String> solutionInstructions) {
-        try (var writer = new PrintWriter(processingEnv.getFiler()
-                .createSourceFile("com.github.gjong.advent.ResolvedAssignment")
+        try (var serviceWriter = new PrintWriter(processingEnv.getFiler()
+                .createResource(StandardLocation.CLASS_OUTPUT,
+                        "",
+                        "META-INF/services/com.github.gjong.advent.DaySolver")
                 .openWriter())) {
 
-            writer.println("package com.github.gjong.advent;");
-            writer.println("import com.github.gjong.advent.DaySolver;");
-            writer.println();
-            writer.println("public final class ResolvedAssignment {");
+            for (var element : roundEnv.getElementsAnnotatedWith(Day.class)) {
+                if (element.getSimpleName().contentEquals("DayTemplate")) {
+                    continue;
+                }
 
-            writer.println("    public static void initialize() {");
-            writer.println("        // Add the assignments here.");
-            for (var instruction : solutionInstructions) {
-                writer.println("        DaySolver.KNOWN_DAYS.add(%s);".formatted(instruction));
+                var assignmentPackage = processingEnv.getElementUtils().getPackageOf(element).getQualifiedName();
+                var className = element.getSimpleName().toString();
+
+                packages.putIfAbsent(assignmentPackage.toString(), new HashSet<>());
+                packages.get(assignmentPackage.toString())
+                        .add(element.getAnnotation(Day.class).day());
+
+                serviceWriter.println("%s.%s".formatted(assignmentPackage, className));
             }
-            writer.println("    }");
-            writer.println("}");
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        processCompleted = true;
+        return true;
     }
 }

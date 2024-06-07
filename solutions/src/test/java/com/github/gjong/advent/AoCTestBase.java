@@ -13,12 +13,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.ServiceLoader;
 import java.util.stream.Stream;
 
 abstract class AoCTestBase {
-    static {
-        ResolvedAssignment.initialize();
-    }
 
     @Retention(RetentionPolicy.RUNTIME)
     protected @interface Year {
@@ -29,8 +27,9 @@ abstract class AoCTestBase {
 
     public AoCTestBase() {
         var year = getClass().getAnnotation(Year.class).value();
-        testSubjects = DaySolver.KNOWN_DAYS
+        testSubjects = ServiceLoader.load(DaySolver.class)
                 .stream()
+                .map(ServiceLoader.Provider::get)
                 .filter(daySolver -> daySolver.getClass().getAnnotation(Day.class).year() == year)
                 .toList();
     }
@@ -89,17 +88,11 @@ abstract class AoCTestBase {
                     field.setAccessible(true);
                     field.set(daySolver, new Validator(day.year(), day.day()) {
                         @Override
-                        public void part1(long answer) {
+                        protected <T> boolean validate(String key, T answer) {
                             Assertions.assertTrue(
-                                    validate("part1_" + sample, answer),
-                                    "Failed for day %d, part 1, case %s.".formatted(day.day(), sample));
-                        }
-
-                        @Override
-                        public void part2(long answer) {
-                            Assertions.assertTrue(
-                                    validate("part2_" + sample, answer),
+                                    super.validate(key + "_" + sample, answer),
                                     "Failed for day %d, part 2, case %s.".formatted(day.day(), sample));
+                            return true;
                         }
                     });
                 }

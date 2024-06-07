@@ -3,6 +3,7 @@ package com.github.gjong.advent.common;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class InputLoader {
@@ -21,6 +22,10 @@ public class InputLoader {
         return string().lines();
     }
 
+    public char[] chars() {
+        return string().toCharArray();
+    }
+
     public String string() {
         try (var inputData = readInputData()) {
             return new String(inputData.readAllBytes());
@@ -35,6 +40,13 @@ public class InputLoader {
 
     public Scanner scanner() {
         return new Scanner(string());
+    }
+
+    public void consumeLine(Consumer<String> lineConsumer) {
+        var scanner = scanner();
+        while (scanner.hasNextLine()) {
+            lineConsumer.accept(scanner.nextLine());
+        }
     }
 
     public CharGrid charGrid() {

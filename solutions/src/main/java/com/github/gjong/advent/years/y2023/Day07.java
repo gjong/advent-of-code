@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-@Day(day = 7, year = 2023)
+@Day(day = 7, year = 2023, name = "Camel Cards")
 public class Day07 implements DaySolver {
 
     private final InputLoader inputLoader = new InputLoader(2023, 7);

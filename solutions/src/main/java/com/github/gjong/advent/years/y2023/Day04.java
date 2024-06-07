@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
-@Day(day = 4, year = 2023)
+@Day(day = 4, year = 2023, name = "Scratchcards")
 public class Day04 implements DaySolver {
 
     record Card(int hand, List<Integer> winningNumbers, List<Integer> yourNumbers) {

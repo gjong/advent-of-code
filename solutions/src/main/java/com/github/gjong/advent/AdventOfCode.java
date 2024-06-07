@@ -6,19 +6,19 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
+import java.util.ServiceLoader;
 import java.util.stream.Collectors;
 
 public class AdventOfCode {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(AdventOfCode.class);
 
-    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | % 5dms | % 5dms |\n";
+    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | % 5dms | % 5dms |\n";
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        ResolvedAssignment.initialize();
-
-        var solutionsPerYear = DaySolver.KNOWN_DAYS
+    public static void main(String[] args) {
+        var solutionsPerYear = ServiceLoader.load(DaySolver.class)
                 .stream()
+                .map(ServiceLoader.Provider::get)
                 .collect(Collectors.groupingBy(daySolver -> daySolver.getClass().getAnnotation(Day.class).year()));
 
         if (args.length == 1) {
@@ -39,8 +39,8 @@ public class AdventOfCode {
         LOGGER.info("-".repeat(80));
 
 
-        var solutionOutput = new StringBuilder("| %-5s | %-4s | %-7s | %-7s |\n".formatted("Year", "Day", "Part 1", "Part 2"))
-                .append("|-------|------|---------|---------|\n");
+        var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s |\n".formatted("Year", "Day", "Name", "Part 1", "Part 2"))
+                .append("|-------|------|-------------------------------------|---------|---------|\n");
         days.stream()
                 .sorted(Comparator.comparingInt(a -> a.getClass().getAnnotation(Day.class).day()))
                 .forEach(daySolver -> {
@@ -50,6 +50,7 @@ public class AdventOfCode {
                             LINE_TEMPLATE.formatted(
                                     year,
                                     day,
+                                    daySolver.getClass().getAnnotation(Day.class).name(),
                                     measure(daySolver::part1),
                                     measure(daySolver::part2)));
                 });

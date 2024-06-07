@@ -8,7 +8,7 @@ import com.github.gjong.advent.common.Validator;
 import java.util.HashMap;
 import java.util.Optional;
 
-@Day(day = 1, year = 2023)
+@Day(day = 1, year = 2023, name = "Trebuchet?!")
 public class Day01 implements DaySolver {
 
     private final InputLoader inputLoader = new InputLoader(2023, 1);

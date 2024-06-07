@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Day(year = 2023, day = 14)
+@Day(year = 2023, day = 14, name = "Parabolic Reflector Dish")
 public class Day14 implements DaySolver {
     private final InputLoader inputLoader = new InputLoader(2023, 14);
     private final Validator validator = new Validator(2023, 14);
