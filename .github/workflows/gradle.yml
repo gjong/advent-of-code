@@ -36,7 +36,7 @@ jobs:
       if: success() || failure()
       with:
         name: test-results
-        path: solutions/build/reports
+        path: solutions/build/test-results
     - name: Test Report
       uses: dorny/test-reporter@v1
       if: success() || failure()
