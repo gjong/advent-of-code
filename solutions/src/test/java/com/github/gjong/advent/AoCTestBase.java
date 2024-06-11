@@ -91,7 +91,7 @@ abstract class AoCTestBase {
                         protected <T> boolean validate(String key, T answer) {
                             Assertions.assertTrue(
                                     super.validate(key + "_" + sample, answer),
-                                    "Failed for day %d, part 2, case %s.".formatted(day.day(), sample));
+                                    "Failed for day %d, case %s.".formatted(day.day(), sample));
                             return true;
                         }
                     });

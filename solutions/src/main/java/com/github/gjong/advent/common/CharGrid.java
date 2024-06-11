@@ -53,6 +53,10 @@ public class CharGrid {
         return grid[idx];
     }
 
+    public char[][] grid() {
+        return grid;
+    }
+
     /**
      * Transpose the grid
      */

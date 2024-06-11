@@ -40,6 +40,22 @@ public record Vector(Point start, Point end) {
                 end.translate(new Point(deltaX, deltaY)));
     }
 
+    /**
+     * Is a line in a 45 degree angle.
+     */
+    public boolean isDiagonal() {
+        return !isVertical() && !isHorizontal()
+                && Math.abs(end.x() - start.x()) == Math.abs(end.y() - start.y());
+    }
+
+    public boolean isHorizontal() {
+        return start.x() != end.x() && start.y() == end.y();
+    }
+
+    public boolean isVertical() {
+        return start.x() == end.x() && start.y() != end.y();
+    }
+
     public Point direction() {
         return new Point(
                 (int) Math.signum(end.x() - start.x()),

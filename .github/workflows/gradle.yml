@@ -31,9 +31,9 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@v3
+      uses: gradle/actions/setup-gradle@v3
       with:
-        arguments: check
+        arguments: 'check'
     - uses: actions/upload-artifact@v4
       if: success() || failure()
       with:

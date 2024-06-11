@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class InputLoader {
@@ -20,6 +21,12 @@ public class InputLoader {
 
     public Stream<String> splitOnNewLine() {
         return string().lines();
+    }
+
+    public IntStream splitOnNewLineToInt() {
+        return string().lines()
+                .map(String::trim)
+                .mapToInt(Integer::parseInt);
     }
 
     public char[] chars() {
