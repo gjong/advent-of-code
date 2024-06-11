@@ -13,7 +13,7 @@ public class AdventOfCode {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(AdventOfCode.class);
 
-    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | % 5dms | % 5dms |\n";
+    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | % 5dms | % 5dms | %-35s |\n";
 
     public static void main(String[] args) {
         var solutionsPerYear = ServiceLoader.load(DaySolver.class)
@@ -39,8 +39,8 @@ public class AdventOfCode {
         LOGGER.info("-".repeat(80));
 
 
-        var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s |\n".formatted("Year", "Day", "Name", "Part 1", "Part 2"))
-                .append("|-------|------|-------------------------------------|---------|---------|\n");
+        var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s | %-35s |\n".formatted("Year", "Day", "Name", "Part 1", "Part 2", "Assignment"))
+                .append("|-------|------|-------------------------------------|---------|---------|----------------------------|\n");
         days.stream()
                 .sorted(Comparator.comparingInt(a -> a.getClass().getAnnotation(Day.class).day()))
                 .forEach(daySolver -> {
@@ -52,7 +52,8 @@ public class AdventOfCode {
                                     day,
                                     daySolver.getClass().getAnnotation(Day.class).name(),
                                     measure(daySolver::part1),
-                                    measure(daySolver::part2)));
+                                    measure(daySolver::part2),
+                                    "[instructions](https://adventofcode.com/%d/day/%d)".formatted(year, day)));
                 });
 
         LOGGER.info("Year {} performance statistics:\n\n{}", year, solutionOutput);

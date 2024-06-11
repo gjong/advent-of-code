@@ -1,9 +1,14 @@
 plugins {
     id("java")
+    id("application")
 }
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = "com.github.gjong.advent.AdventOfCode"
 }
 
 dependencies {
