@@ -13,8 +13,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 13, year = 2022, name = "Distress Signal")
 public class Day13 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 13);
-    private final Validator validator = new Validator(2022, 13);
+    private final InputLoader inputLoader = DayLoader.inputDay13();
+    private final Validator validator = DayLoader.validatorDay13();
 
     @Override
     public void part1() {

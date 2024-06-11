@@ -16,8 +16,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 5, year = 2022, name = "Supply Stacks")
 public class Day05 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 5);
-    private final Validator validator = new Validator(2022, 5);
+    private final InputLoader inputLoader = DayLoader.inputDay5();
+    private final Validator validator = DayLoader.validatorDay5();
 
     private final Pattern moveExtractor = Pattern.compile("move\\s(?<count>\\d+)\\sfrom\\s(?<from>\\d+)\\sto\\s(?<to>\\d+)");
     private final List<Stack<String>> columns = new ArrayList<>();

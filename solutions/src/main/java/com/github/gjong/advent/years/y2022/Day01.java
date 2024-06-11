@@ -9,8 +9,8 @@ import java.util.stream.Stream;
 
 @Day(day = 1, year = 2022, name = "Calorie Counting")
 public class Day01 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 1);
-    private final Validator validator = new Validator(2022, 1);
+    private final InputLoader inputLoader = DayLoader.inputDay1();
+    private final Validator validator = DayLoader.validatorDay1();
 
     @Override
     public void part1() {

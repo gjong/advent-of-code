@@ -11,8 +11,8 @@ import java.util.Optional;
 @Day(day = 1, year = 2023, name = "Trebuchet?!")
 public class Day01 implements DaySolver {
 
-    private final InputLoader inputLoader = new InputLoader(2023, 1);
-    private final Validator validator = new Validator(2023, 1);
+    private final InputLoader inputLoader = DayLoader.inputDay1();
+    private final Validator validator = DayLoader.validatorDay1();
 
     @Override
     public void part1() {

@@ -13,8 +13,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 10, year = 2022, name = "Cathode-Ray Tube")
 public class Day10 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 10);
-    private final Validator validator = new Validator(2022, 10);
+    private final InputLoader inputLoader = DayLoader.inputDay10();
+    private final Validator validator = DayLoader.validatorDay10();
 
     private static final int MAX_CYCLE = 220;
     public static final String ADD_INST = "addx ";

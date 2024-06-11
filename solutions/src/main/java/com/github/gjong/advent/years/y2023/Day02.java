@@ -11,8 +11,8 @@ public class Day02 implements DaySolver {
     record Game(int number, int green, int red, int blue) {
     }
 
-    private final InputLoader inputLoader = new InputLoader(2023, 2);
-    private final Validator validator = new Validator(2023, 2);
+    private final InputLoader inputLoader = DayLoader.inputDay2();
+    private final Validator validator = DayLoader.validatorDay2();
 
     @Override
     public void part1() {

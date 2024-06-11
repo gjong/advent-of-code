@@ -15,8 +15,8 @@ import static java.lang.Long.parseLong;
 
 @Day(day = 7, year = 2022, name = "No Space Left On Device")
 public class Day07 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 7);
-    private final Validator validator = new Validator(2022, 7);
+    private final InputLoader inputLoader = DayLoader.inputDay7();
+    private final Validator validator = DayLoader.validatorDay7();
 
     private static final int TOTAL_DISK_SIZE = 70_000_000;
     private static final int NEEDED_DISK_SIZE = 30_000_000;

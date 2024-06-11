@@ -15,8 +15,8 @@ import static java.lang.Long.parseLong;
 
 @Day(day = 11, year = 2022, name = "Monkey in the Middle")
 public class Day11 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 11);
-    private final Validator validator = new Validator(2022, 11);
+    private final InputLoader inputLoader = DayLoader.inputDay11();
+    private final Validator validator = DayLoader.validatorDay11();
 
     @Override
     public void part1() {

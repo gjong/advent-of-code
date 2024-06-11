@@ -11,8 +11,8 @@ import java.util.stream.Stream;
 
 @Day(day = 3, year = 2022, name = "Rucksack Reorganization")
 public class Day03 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 3);
-    private final Validator validator = new Validator(2022, 3);
+    private final InputLoader inputLoader = DayLoader.inputDay3();
+    private final Validator validator = DayLoader.validatorDay3();
 
     @Override
     public void part1() {

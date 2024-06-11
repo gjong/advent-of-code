@@ -7,8 +7,8 @@ import com.github.gjong.advent.common.Validator;
 
 @Day(day = 2, year = 2022, name = "Rock Paper Scissors")
 public class Day02 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 2);
-    private final Validator validator = new Validator(2022, 2);
+    private final InputLoader inputLoader = DayLoader.inputDay2();
+    private final Validator validator = DayLoader.validatorDay2();
 
     @Override
     public void part1() {

@@ -9,8 +9,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 8, year = 2022, name = "Treetop Tree House")
 public class Day08 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 8);
-    private final Validator validator = new Validator(2022, 8);
+    private final InputLoader inputLoader = DayLoader.inputDay8();
+    private final Validator validator = DayLoader.validatorDay8();
 
     @Override
     public void part1() {

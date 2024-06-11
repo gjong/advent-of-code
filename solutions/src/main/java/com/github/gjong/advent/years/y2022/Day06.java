@@ -9,8 +9,8 @@ import java.util.LinkedList;
 
 @Day(day = 6, year = 2022, name = "Tuning Trouble")
 public class Day06 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 6);
-    private final Validator validator = new Validator(2022, 6);
+    private final InputLoader inputLoader = DayLoader.inputDay6();
+    private final Validator validator = DayLoader.validatorDay6();
 
     @Override
     public void part1() {

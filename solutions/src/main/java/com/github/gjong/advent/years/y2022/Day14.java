@@ -15,8 +15,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 14, year = 2022, name = "Regolith Reservoir")
 public class Day14 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2022, 14);
-    private final Validator validator = new Validator(2022, 14);
+    private final InputLoader inputLoader = DayLoader.inputDay14();
+    private final Validator validator = DayLoader.validatorDay14();
 
     private static final Point DROP_POINT = Point.of(500, 0);
 

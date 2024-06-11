@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
@@ -50,11 +51,43 @@ public class AssignmentFinder extends AbstractProcessor {
                 serviceWriter.println("%s.%s".formatted(assignmentPackage, className));
             }
 
+            packages.forEach(this::createInputLoader);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         processCompleted = true;
         return true;
+    }
+
+    private void createInputLoader(String packageName, Set<Integer> days) {
+        var year = packageName.substring(packageName.lastIndexOf('.') + 2);
+        try (var inputLoaderWriter = new PrintWriter(processingEnv.getFiler()
+                .createSourceFile("%s.DayLoader".formatted(packageName))
+                .openWriter())) {
+
+            inputLoaderWriter.println("package %s;".formatted(packageName));
+            inputLoaderWriter.println();
+            inputLoaderWriter.println("import com.github.gjong.advent.common.InputLoader;");
+            inputLoaderWriter.println("import com.github.gjong.advent.common.Validator;");
+            inputLoaderWriter.println("import javax.annotation.processing.Generated;");
+            inputLoaderWriter.println();
+            inputLoaderWriter.println("@Generated(\"%s\")".formatted(getClass().getCanonicalName()));
+            inputLoaderWriter.println("class DayLoader {");
+            inputLoaderWriter.println();
+            for (var day : days) {
+                inputLoaderWriter.println("    public static InputLoader inputDay%d() {".formatted(day));
+                inputLoaderWriter.println("        return new InputLoader(%s, %d);".formatted(year, day));
+                inputLoaderWriter.println("    }");
+                inputLoaderWriter.println();
+                inputLoaderWriter.println("    public static Validator validatorDay%d() {".formatted(day));
+                inputLoaderWriter.println("        return new Validator(%s, %d);".formatted(year, day));
+                inputLoaderWriter.println("    }");
+                inputLoaderWriter.println();
+            }
+            inputLoaderWriter.println("}");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
