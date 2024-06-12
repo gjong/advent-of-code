@@ -40,35 +40,33 @@ abstract class AoCTestBase {
         var year = getClass().getAnnotation(Year.class).value();
 
         return testSubjects.stream()
-                .flatMap(daySolver -> {
-                            var day = daySolver.getClass().getAnnotation(Day.class).day();
-                            return findTestInput(year, daySolver.getClass().getAnnotation(Day.class).day())
-                                    .flatMap(path -> {
-                                        var sample = path.getFileName().toString()
-                                                .replace("day_%02d_".formatted(day), "")
-                                                .replace(".txt", "");
+                .flatMap(daySolver -> findTestInput(year, daySolver.getClass().getAnnotation(Day.class).day())
+                        .flatMap(path -> generateForSample(daySolver, path)));
+    }
 
-                                        return Stream.concat(
-                                                Stream.of(DynamicTest.dynamicTest(
-                                                        "Day %d: %s - part 1".formatted(day, sample),
-                                                        () -> {
-                                                            // given
-                                                            injectInput(daySolver, path, sample);
-                                                            daySolver.part1();
-                                                        }
-                                                )),
-                                                Stream.of(DynamicTest.dynamicTest(
-                                                        "Day %d: %s - part 2".formatted(day, sample),
-                                                        () -> {
-                                                            // given
-                                                            injectInput(daySolver, path, sample);
-                                                            daySolver.part2();
-                                                        }
-                                                )));
+    private Stream<DynamicTest> generateForSample(DaySolver daySolver, Path path) {
+        var day = daySolver.getClass().getAnnotation(Day.class).day();
+        var sample = path.getFileName().toString()
+                .replace("day_%02d_".formatted(day), "")
+                .replace(".txt", "");
 
-                                    });
+        return Stream.concat(
+                Stream.of(DynamicTest.dynamicTest(
+                        "Day %d: %s - part 1".formatted(day, sample),
+                        () -> {
+                            // given
+                            injectInput(daySolver, path, sample);
+                            daySolver.part1();
                         }
-                );
+                )),
+                Stream.of(DynamicTest.dynamicTest(
+                        "Day %d: %s - part 2".formatted(day, sample),
+                        () -> {
+                            // given
+                            injectInput(daySolver, path, sample);
+                            daySolver.part2();
+                        }
+                )));
     }
 
     private void injectInput(DaySolver daySolver, Path path, String sample) {

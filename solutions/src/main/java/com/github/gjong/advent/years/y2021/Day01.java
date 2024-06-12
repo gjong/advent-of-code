@@ -4,6 +4,7 @@ import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
+import com.jongsoft.lang.Collections;
 
 @Day(day = 1, year = 2021, name = "Sonar Sweep")
 public class Day01 implements DaySolver {
@@ -27,8 +28,10 @@ public class Day01 implements DaySolver {
     public void part2() {
         var increases = 0;
         var input = inputLoader.splitOnNewLineToInt().boxed().toList();
-        for (var idx = 4; idx < input.size(); idx++) {
-            if (input.get(idx - 4) < input.get(idx)) {
+        for (var idx = 2; idx < input.size(); idx++) {
+            var first = Collections.List(input.subList(Math.max(idx - 4, 0), idx - 1)).sum().get();
+            var second = Collections.List(input.subList(Math.max(idx - 3, 0), idx)).sum().get();
+            if (first < second) {
                 increases++;
             }
         }

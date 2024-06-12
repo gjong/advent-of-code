@@ -58,9 +58,27 @@ echo "Running solutions for all years"
 ## Solution statistics
 
 Each solution is timed using the `Instant.now()` method, and the results are displayed in the table below.
-The time is measured in milliseconds and includes the time to read the input, run the solution, and validating the output.
+The time is measured in milliseconds and includes the time to read the input, run the solution, and validating the
+output.
 
 The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
+
+### 2021 - solutions
+
+| Year | Day | Name                    | Part 1 | Part 2 | Assignment                                           |
+|------|-----|-------------------------|--------|--------|------------------------------------------------------|
+| 2021 | 01  | Sonar Sweep             | 18ms   | 19ms   | [instructions](https://adventofcode.com/2021/day/1)  |
+| 2021 | 02  | Dive!                   | 8ms    | 0ms    | [instructions](https://adventofcode.com/2021/day/2)  |
+| 2021 | 03  | Binary Diagnostic       | 2ms    | 7ms    | [instructions](https://adventofcode.com/2021/day/3)  |
+| 2021 | 04  | Giant Squid             | 27ms   | 23ms   | [instructions](https://adventofcode.com/2021/day/4)  |
+| 2021 | 05  | Hydrothermal Venture    | 79ms   | 25ms   | [instructions](https://adventofcode.com/2021/day/5)  |
+| 2021 | 06  | Lanternfish             | 2ms    | 0ms    | [instructions](https://adventofcode.com/2021/day/6)  |
+| 2021 | 07  | The Treachery of Whales | 3ms    | 9ms    | [instructions](https://adventofcode.com/2021/day/7)  |
+| 2021 | 08  |                         | 21ms   | 11ms   | [instructions](https://adventofcode.com/2021/day/8)  |
+| 2021 | 09  | Smoke Basin             | 1ms    | 3ms    | [instructions](https://adventofcode.com/2021/day/9)  |
+| 2021 | 10  | Syntax Scoring          | 9ms    | 4ms    | [instructions](https://adventofcode.com/2021/day/10) |
+| 2021 | 11  | Dumbo Octopus           | 3ms    | 0ms    | [instructions](https://adventofcode.com/2021/day/11) |
+| 2021 | 12  | Passage Pathing         | 26ms   | 784ms  | [instructions](https://adventofcode.com/2021/day/12) |
 
 ### 2022 - solutions
 
