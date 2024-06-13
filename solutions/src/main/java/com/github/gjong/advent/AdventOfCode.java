@@ -50,7 +50,10 @@ public class AdventOfCode {
                             LINE_TEMPLATE.formatted(
                                     year,
                                     day,
-                                    daySolver.getClass().getAnnotation(Day.class).name(),
+                                    "[%s](solutions/src/main/java/com/github/gjong/advent/years/y%d/%s.java)".formatted(
+                                            daySolver.getClass().getAnnotation(Day.class).name(),
+                                            year,
+                                            daySolver.getClass().getSimpleName()),
                                     measure(daySolver::part1),
                                     measure(daySolver::part2),
                                     "[instructions](https://adventofcode.com/%d/day/%d)".formatted(year, day)));
