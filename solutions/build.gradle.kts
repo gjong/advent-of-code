@@ -13,6 +13,7 @@ application {
 
 dependencies {
     annotationProcessor(project(":annotation-scanner"))
+    testAnnotationProcessor(project(":annotation-scanner"))
 
     implementation(aoc.slf4j)
     implementation(aoc.lang)
