@@ -6,10 +6,21 @@ Each day, a new programming challenge is released, and this repository contains 
 
 ## Repository structure
 
-The repository is organized as a Java project with a submodule named solutions. The solutions module includes a package
-`com.github.gjong.advent` with subpackages for each year, prefixed with a 'y', and additional subpackages for shared
-logic: [common](solutions/src/main/java/com/github/gjong/advent/common), [algo](solutions/src/main/java/com/github/gjong/advent/algo),
-and [geo](solutions/src/main/java/com/github/gjong/advent/geo).
+The repository is organized as a Java project with a submodule named solutions and one called annotation-scanner. 
+
+### Annotation Scanner
+
+The annotation scanner module supports the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/generator/AssignmentFinder.java) of the `DayLoader` class for each year.
+As well as [generation](annotation-scanner/src/main/java/com/github/gjong/advent/generator/TestGenerator.java) test classes per year with test cases for each case.
+A test case is determined by files in the following location:
+
+    test/resources/input/%year%/day_%day%_%test-case%
+
+Where the year and day are substituted with the year and day of the challenge, and the test-case is the name of the test case.
+
+### Solutions
+
+The solutions module includes a package `com.github.gjong.advent` with subpackages for each year, prefixed with a 'y', and additional subpackages for shared logic: [common](solutions/src/main/java/com/github/gjong/advent/common), [algo](solutions/src/main/java/com/github/gjong/advent/algo), and [geo](solutions/src/main/java/com/github/gjong/advent/geo).
 
 ```
 advent-of-code/
