@@ -1,6 +1,4 @@
-package com.github.gjong.advent.cdi;
-
-import com.github.gjong.advent.Day;
+package com.github.gjong.advent.processor;
 
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.lang.model.element.TypeElement;

@@ -1,7 +1,6 @@
-package com.github.gjong.advent.test;
+package com.github.gjong.advent.processor;
 
 import com.github.gjong.advent.Day;
-import com.github.gjong.advent.cdi.TypeDependencyResolver;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;

@@ -1,4 +1,6 @@
-package com.github.gjong.advent.cdi;
+package com.github.gjong.advent.processor;
+
+import com.github.gjong.advent.cdi.Bean;
 
 import javax.annotation.processing.Messager;
 import javax.lang.model.element.Modifier;
@@ -10,7 +12,7 @@ import java.util.List;
 
 import static javax.tools.Diagnostic.Kind.ERROR;
 
-public class TypeDependencyResolver {
+class TypeDependencyResolver {
     private static final IllegalStateException RESOLVE_FAILED = new IllegalStateException("Failed to resolve dependency.");
 
     public record Definition(TypeElement type, List<TypeMirror> dependencies) {

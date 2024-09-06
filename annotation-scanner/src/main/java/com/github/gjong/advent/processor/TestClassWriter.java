@@ -1,7 +1,6 @@
-package com.github.gjong.advent.test;
+package com.github.gjong.advent.processor;
 
 import com.github.gjong.advent.Day;
-import com.github.gjong.advent.cdi.TypeDependencyResolver;
 
 import javax.annotation.processing.Messager;
 import javax.annotation.processing.ProcessingEnvironment;
@@ -12,7 +11,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class TestClassWriter {
+class TestClassWriter {
     private final TypeDependencyResolver.Definition definition;
     private final Messager messager;
     private final List<String> testCases;

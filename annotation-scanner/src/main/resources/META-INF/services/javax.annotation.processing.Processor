@@ -1,3 +1,3 @@
-com.github.gjong.advent.cdi.BeanProcessor
-com.github.gjong.advent.cdi.DayProcessor
-com.github.gjong.advent.test.TestCaseProcessor
+com.github.gjong.advent.processor.BeanProcessor
+com.github.gjong.advent.processor.DayProcessor
+com.github.gjong.advent.processor.TestCaseProcessor

@@ -1,4 +1,6 @@
-package com.github.gjong.advent.cdi;
+package com.github.gjong.advent.processor;
+
+import com.github.gjong.advent.cdi.Bean;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;

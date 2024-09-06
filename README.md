@@ -13,7 +13,7 @@ The repository is organized as a Java project with a submodule named solutions a
 The annotation scanner module supports the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/cdi/DayProcessor.java) of the `DaySolver` class for each year.
 This annotation scanner will add an instance of the DaySolver in the bean context registry.
 
-Automated test generation is done using the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/test/TestCaseProcessor.java) test classes per year with test cases for each case.
+Automated test generation is done using the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/processor/TestCaseProcessor.java) test classes per year with test cases for each case.
 A test case is determined by files in the following location:
 
     test/resources/input/%year%/day_%day%_%test-case%
