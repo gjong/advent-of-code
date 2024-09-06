@@ -8,8 +8,13 @@ import com.jongsoft.lang.Collections;
 
 @Day(day = 1, year = 2021, name = "Sonar Sweep")
 public class Day01 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay1();
-    private final Validator validator = DayLoader.validatorDay1();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    Day01(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

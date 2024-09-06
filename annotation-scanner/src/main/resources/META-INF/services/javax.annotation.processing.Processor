@@ -1,2 +1,3 @@
-com.github.gjong.advent.generator.AssignmentFinder
-com.github.gjong.advent.generator.TestGenerator
+com.github.gjong.advent.cdi.BeanProcessor
+com.github.gjong.advent.cdi.DayProcessor
+com.github.gjong.advent.test.TestCaseProcessor

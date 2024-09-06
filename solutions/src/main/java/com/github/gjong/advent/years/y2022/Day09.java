@@ -14,8 +14,13 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 9, year = 2022, name = "Rope Bridge")
 public class Day09 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay9();
-    private final Validator validator = DayLoader.validatorDay9();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day09(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

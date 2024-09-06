@@ -14,9 +14,14 @@ import java.util.Map;
 
 @Day(year = 2023, day = 14, name = "Parabolic Reflector Dish")
 public class Day14 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 14);
-    private final Validator validator = new Validator(2023, 14);
+    private final InputLoader inputLoader;
+    private final Validator validator;
     private static final int MAX_RUNS = 1000000000;
+
+    public Day14(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     static class World extends HashMap<Point, Character> {
 

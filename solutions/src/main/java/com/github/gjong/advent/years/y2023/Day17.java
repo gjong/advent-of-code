@@ -11,8 +11,13 @@ import java.util.*;
 
 @Day(day = 17, year = 2023, name = "Clumsy Crucible")
 public class Day17 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 17);
-    private final Validator validator = new Validator(2023, 17);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day17(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     record PathCost(Point location, char direction, int cost) implements Comparable<PathCost> {
         @Override

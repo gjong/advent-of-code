@@ -11,8 +11,13 @@ import java.util.stream.Collectors;
 
 @Day(day = 10, year = 2023, name = "Pipe Maze")
 public class Day10 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 10);
-    private final Validator validator = new Validator(2023, 10);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day10(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     record Grid(Point start, Map<Point, List<Point>> graph) {
     }

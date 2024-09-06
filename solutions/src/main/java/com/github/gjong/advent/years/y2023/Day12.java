@@ -13,10 +13,15 @@ import java.util.Map;
 
 @Day(day = 12, year = 2023, name = "Hot Springs")
 public class Day12 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 12);
-    private final Validator validator = new Validator(2023, 12);
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private final Map<String, Long> cache = new HashMap<>();
+
+    public Day12(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

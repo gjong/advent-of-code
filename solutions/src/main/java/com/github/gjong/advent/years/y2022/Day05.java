@@ -16,11 +16,16 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 5, year = 2022, name = "Supply Stacks")
 public class Day05 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay5();
-    private final Validator validator = DayLoader.validatorDay5();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private final Pattern moveExtractor = Pattern.compile("move\\s(?<count>\\d+)\\sfrom\\s(?<from>\\d+)\\sto\\s(?<to>\\d+)");
     private final List<Stack<String>> columns = new ArrayList<>();
+
+    public Day05(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

@@ -5,7 +5,6 @@ import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 
-import java.util.Arrays;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -13,12 +12,17 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 10, year = 2022, name = "Cathode-Ray Tube")
 public class Day10 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay10();
-    private final Validator validator = DayLoader.validatorDay10();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private static final int MAX_CYCLE = 220;
     public static final String ADD_INST = "addx ";
     private static final int CYCLES_PER_ROW = 40;
+
+    public Day10(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

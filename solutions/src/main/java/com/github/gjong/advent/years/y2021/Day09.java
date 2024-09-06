@@ -13,10 +13,15 @@ import java.util.stream.Collectors;
 
 @Day(day = 9, year = 2021, name = "Smoke Basin")
 public class Day09 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay9();
-    private final Validator validator = DayLoader.validatorDay9();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private boolean[][] visited;
+
+    public Day09(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

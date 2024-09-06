@@ -12,8 +12,13 @@ import java.util.stream.Collectors;
 
 @Day(day = 12, year = 2021, name = "Passage Pathing")
 public class Day12 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay12();
-    private final Validator validator = DayLoader.validatorDay12();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day12(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

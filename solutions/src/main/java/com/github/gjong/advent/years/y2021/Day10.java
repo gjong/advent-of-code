@@ -11,8 +11,13 @@ import java.util.Stack;
 
 @Day(day = 10, year = 2021, name = "Syntax Scoring")
 public class Day10 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay10();
-    private final Validator validator = DayLoader.validatorDay10();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day10(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

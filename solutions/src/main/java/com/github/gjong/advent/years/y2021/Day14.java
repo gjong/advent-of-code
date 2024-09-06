@@ -14,8 +14,13 @@ import java.util.stream.Collectors;
 
 @Day(day = 14, year = 2021, name = "Extended Polymerization")
 public class Day14 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay14();
-    private final Validator validator = DayLoader.validatorDay14();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day14(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

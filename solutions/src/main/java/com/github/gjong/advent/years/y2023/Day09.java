@@ -11,8 +11,13 @@ import java.util.List;
 
 @Day(day = 9, year = 2023, name = "Mirage Maintenance")
 public class Day09 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 9);
-    private final Validator validator = new Validator(2023, 9);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day09(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

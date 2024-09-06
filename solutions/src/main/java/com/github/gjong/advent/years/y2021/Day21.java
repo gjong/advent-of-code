@@ -16,8 +16,8 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 21, year = 2021, name = "Dirac Dice")
 public class Day21 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay21();
-    private final Validator validator = DayLoader.validatorDay21();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private static final List<QuantumDice> DICE_OPTIONS = List.of(
             new QuantumDice(() -> 3, 1),
@@ -27,6 +27,11 @@ public class Day21 implements DaySolver {
             new QuantumDice(() -> 7, 6),
             new QuantumDice(() -> 8, 3),
             new QuantumDice(() -> 9, 1));
+
+    public Day21(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
 
     @Override

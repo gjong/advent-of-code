@@ -14,8 +14,13 @@ import java.util.stream.Stream;
 
 @Day(year = 2023, day = 15, name = "Lens Library")
 public class Day15 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 15);
-    private final Validator validator = new Validator(2023, 15);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day15(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     record Lens(String lens, int focalStrength) {}
 

@@ -15,12 +15,17 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 14, year = 2022, name = "Regolith Reservoir")
 public class Day14 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay14();
-    private final Validator validator = DayLoader.validatorDay14();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private static final Point DROP_POINT = Point.of(500, 0);
 
     int lowestY;
+
+    public Day14(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

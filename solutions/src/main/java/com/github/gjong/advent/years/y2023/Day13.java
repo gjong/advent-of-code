@@ -11,10 +11,15 @@ import java.util.stream.Stream;
 
 @Day(day = 13, year = 2023, name = "Point of Incidence")
 public class Day13 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 13);
-    private final Validator validator = new Validator(2023, 13);
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private static final int FACTOR_ROWS = 100;
+
+    public Day13(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

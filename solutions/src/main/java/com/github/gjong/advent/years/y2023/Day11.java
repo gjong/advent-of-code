@@ -11,8 +11,13 @@ import java.util.List;
 
 @Day(day = 11, year = 2023, name = "Cosmic Expansion")
 public class Day11 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 11);
-    private final Validator validator = new Validator(2023, 11);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day11(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

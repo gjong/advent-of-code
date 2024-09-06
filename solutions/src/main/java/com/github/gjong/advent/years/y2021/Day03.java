@@ -16,8 +16,13 @@ import static java.lang.Integer.parseInt;
 @Day(day = 3, year = 2021, name = "Binary Diagnostic")
 public class Day03 implements DaySolver {
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private final InputLoader inputLoader = DayLoader.inputDay3();
-    private final Validator validator = DayLoader.validatorDay3();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day03(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

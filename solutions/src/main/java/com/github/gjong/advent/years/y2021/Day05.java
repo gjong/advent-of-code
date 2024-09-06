@@ -17,8 +17,13 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 5, year = 2021, name = "Hydrothermal Venture")
 public class Day05 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay5();
-    private final Validator validator = DayLoader.validatorDay5();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day05(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

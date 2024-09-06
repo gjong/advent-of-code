@@ -16,15 +16,11 @@ public class AdventOfCode {
     private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | % 5dms | % 5dms | %-35s |\n";
 
     public static void main(String[] args) {
-        var solutionsPerYear = ServiceLoader.load(DaySolver.class)
-                .stream()
-                .map(ServiceLoader.Provider::get)
-                .collect(Collectors.groupingBy(daySolver -> daySolver.getClass().getAnnotation(Day.class).year()));
-
         if (args.length == 1) {
             var year = Integer.parseInt(args[0]);
-            analyzeYear(year, solutionsPerYear.get(year));
+            analyzeYear(year, SolutionProvider.instance().provide(year));
         } else {
+            var solutionsPerYear = SolutionProvider.instance().provideAll();
             solutionsPerYear.keySet()
                     .stream()
                     .sorted()
@@ -37,7 +33,6 @@ public class AdventOfCode {
         LOGGER.info("-".repeat(80));
         LOGGER.info("                              Advent of Code {}", year);
         LOGGER.info("-".repeat(80));
-
 
         var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s | %-35s |\n".formatted("Year", "Day", "Name", "Part 1", "Part 2", "Assignment"))
                 .append("|-------|------|-------------------------------------|---------|---------|----------------------------|\n");

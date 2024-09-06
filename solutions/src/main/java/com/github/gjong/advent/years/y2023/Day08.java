@@ -14,8 +14,13 @@ import java.util.regex.Pattern;
 
 @Day(day = 8, year = 2023, name = "Haunted Wasteland")
 public class Day08 implements DaySolver {
-    private final InputLoader inputLoader = new InputLoader(2023, 8);
-    private final Validator validator = new Validator(2023, 8);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day08(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     /**
      * This record represents a possible move in the network.

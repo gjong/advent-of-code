@@ -12,10 +12,15 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 17, year = 2021, name = "Trick Shot")
 public class Day17 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay17();
-    private final Validator validator = DayLoader.validatorDay17();
+    private final InputLoader inputLoader;
+    private final Validator validator;
 
     private final Pattern AREA_PATTERN = Pattern.compile(".*x=([\\-\\d]+)..([\\-\\d]+), y=([\\-\\d]+)..([\\-\\d]+).*");
+
+    public Day17(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

@@ -6,8 +6,6 @@ import com.github.gjong.advent.common.Grid;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 import com.github.gjong.advent.geo.Point;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -15,8 +13,13 @@ import static java.lang.Integer.parseInt;
 
 @Day(day = 15, year = 2021, name = "Chiton")
 public class Day15 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay15();
-    private final Validator validator = DayLoader.validatorDay15();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day15(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

@@ -11,8 +11,13 @@ import java.util.function.BiPredicate;
 
 @Day(day = 12, year = 2022, name = "Hill Climbing Algorithm")
 public class Day12 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay12();
-    private final Validator validator = DayLoader.validatorDay12();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day12(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.toSet;
 
 @Day(year = 2023, day = 3, name = "Gear Ratios")
 public class Day03 implements DaySolver {
+
     private sealed interface Position permits NumberWithPos, SymbolPos {
     }
 
@@ -27,8 +28,13 @@ public class Day03 implements DaySolver {
     }
 
     private static final Set<Character> SYMBOLS = Set.of('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '+', '=', '|', '~', '`', '{', '}', '[', ']', ':', ';', '"', '\'', '<', '>', ',', '?', '/', '\\');
-    private final InputLoader inputLoader = new InputLoader(2023, 3);
-    private final Validator validator = new Validator(2023, 3);
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day03(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

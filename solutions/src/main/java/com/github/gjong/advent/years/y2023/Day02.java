@@ -8,11 +8,17 @@ import com.github.gjong.advent.common.Validator;
 @Day(day = 2, year = 2023, name = "Cube Conundrum")
 public class Day02 implements DaySolver {
 
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day02(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
+
     record Game(int number, int green, int red, int blue) {
     }
 
-    private final InputLoader inputLoader = DayLoader.inputDay2();
-    private final Validator validator = DayLoader.validatorDay2();
 
     @Override
     public void part1() {

@@ -14,8 +14,13 @@ import static java.lang.Long.parseLong;
 
 @Day(day = 16, year = 2021, name = "Packet Decoder")
 public class Day16 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay16();
-    private final Validator validator = DayLoader.validatorDay16();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day16(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {

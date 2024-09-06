@@ -11,8 +11,13 @@ import java.util.stream.IntStream;
 
 @Day(day = 7, year = 2021, name = "The Treachery of Whales")
 public class Day07 implements DaySolver {
-    private final InputLoader inputLoader = DayLoader.inputDay7();
-    private final Validator validator = DayLoader.validatorDay7();
+    private final InputLoader inputLoader;
+    private final Validator validator;
+
+    public Day07(InputLoader inputLoader, Validator validator) {
+        this.inputLoader = inputLoader;
+        this.validator = validator;
+    }
 
     @Override
     public void part1() {
