@@ -21,6 +21,13 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
+/**
+ * Processor to generate test classes for Advent of Code solutions based on annotation metadata.
+ * This processor locates the necessary day solver classes using CDI beans and generates test classes accordingly.
+ * <p>
+ * For each day the resources directory is scanned to locate test cases.
+ * Each one of the test cases will get a dedicated test method in the test class for that day.
+ */
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
 @SupportedAnnotationTypes("com.github.gjong.advent.GeneratedTest")
 public class TestCaseProcessor extends AbstractProcessor {

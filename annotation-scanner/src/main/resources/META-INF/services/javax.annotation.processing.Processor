@@ -1,3 +1,2 @@
-com.github.gjong.advent.processor.BeanProcessor
 com.github.gjong.advent.processor.DayProcessor
 com.github.gjong.advent.processor.TestCaseProcessor

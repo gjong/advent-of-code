@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.function.Function;
 
+/**
+ * The DefinitionWriter class is responsible for generating source code for a CDI bean based on a given TypeDependencyResolver definition.
+ * It provides methods to write the source file for the generated bean class.
+ */
 class DefinitionWriter {
     private final TypeDependencyResolver.Definition definition;
     private final String definedClassName;
@@ -18,12 +22,23 @@ class DefinitionWriter {
         this.parameterResolver = "provider.provide(%s.class)"::formatted;
     }
 
+    /**
+     * Constructor for DefinitionWriter class.
+     *
+     * @param definition the TypeDependencyResolver.Definition object containing type and dependencies
+     * @param parameterResolver a Function to resolve a TypeMirror to a corresponding string representation based on type
+     */
     public DefinitionWriter(TypeDependencyResolver.Definition definition, Function<TypeMirror, String> parameterResolver) {
         this.definition = definition;
         this.definedClassName = "$%s$Definition".formatted(definition.type().getSimpleName());
         this.parameterResolver = parameterResolver;
     }
 
+    /**
+     * Writes a source file based on the provided ProcessingEnvironment.
+     *
+     * @param environment the ProcessingEnvironment object to use for creating the source file
+     */
     void writeSourceFile(ProcessingEnvironment environment) {
         var packageName = environment.getElementUtils().getPackageOf(definition.type()).getQualifiedName();
         var fileName = packageName + "." + definedClassName;

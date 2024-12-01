@@ -16,6 +16,16 @@ import java.io.PrintWriter;
 import java.util.Set;
 import java.util.function.Function;
 
+/**
+ * A processor responsible for generating code for Advent of Code solutions marked with the {@link Day} annotation.
+ * The DayProcessor is an implementation of the AbstractProcessor class and is capable of processing annotations during compilation.
+ * It generates injectable CdiBean versions of the annotated exercise classes based on specified parameters.
+ * <p>
+ * The primary method {@link #process} handles the processing logic by calling {@link #processBeans} and setting processCompleted to true when completed.
+ * The {@link #processBeans} method processes annotated elements, resolves dependencies, and writes generated code and services to specified locations.
+ * The {@link #parameterResolver} method determines the parameters needed for bean definitions based on the annotation values.
+ * It is recommended to annotate Advent of Code solutions with the {@link Day} annotation for the DayProcessor to properly generate code.
+ */
 @SupportedAnnotationTypes({"com.github.gjong.advent.Day"}) // 1
 @SupportedSourceVersion(SourceVersion.RELEASE_21)
 public class DayProcessor extends AbstractProcessor {
@@ -66,6 +76,13 @@ public class DayProcessor extends AbstractProcessor {
         }
     }
 
+    /**
+     * Resolves the parameter to a specific string representation based on the given Day.
+     * This map has overrides for specifically the InputLoader and Validator class.
+     *
+     * @param day the Day object used to determine the parameter's value
+     * @return a Function that maps a TypeMirror to a corresponding string representation based on the type
+     */
     private Function<TypeMirror, String> parameterResolver(Day day) {
         return type -> switch (type.toString()) {
             case "com.github.gjong.advent.common.InputLoader" ->
