@@ -6,23 +6,31 @@ Each day, a new programming challenge is released, and this repository contains 
 
 ## Repository structure
 
-The repository is organized as a Java project with a submodule named solutions and one called annotation-scanner. 
+The repository is organized as a Java project with a submodule named solutions and one called annotation-scanner.
 
 ### Annotation Scanner
 
-The annotation scanner module supports the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/cdi/DayProcessor.java) of the `DaySolver` class for each year.
+The annotation scanner module supports
+the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/cdi/DayProcessor.java) of the `DaySolver`
+class for each year.
 This annotation scanner will add an instance of the DaySolver in the bean context registry.
 
-Automated test generation is done using the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/processor/TestCaseProcessor.java) test classes per year with test cases for each case.
+Automated test generation is done using
+the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/processor/TestCaseProcessor.java) test classes
+per year with test cases for each case.
 A test case is determined by files in the following location:
 
     test/resources/input/%year%/day_%day%_%test-case%
 
-Where the year and day are substituted with the year and day of the challenge, and the test-case is the name of the test case.
+Where the year and day are substituted with the year and day of the challenge, and the test-case is the name of the test
+case.
 
 ### Solutions
 
-The solutions module includes a package `com.github.gjong.advent` with subpackages for each year, prefixed with a 'y', and additional subpackages for shared logic: [common](solutions/src/main/java/com/github/gjong/advent/common), [algo](solutions/src/main/java/com/github/gjong/advent/algo), and [geo](solutions/src/main/java/com/github/gjong/advent/geo).
+The solutions module includes a package `com.github.gjong.advent` with subpackages for each year, prefixed with a 'y',
+and additional subpackages for shared
+logic: [common](solutions/src/main/java/com/github/gjong/advent/common), [algo](solutions/src/main/java/com/github/gjong/advent/algo),
+and [geo](solutions/src/main/java/com/github/gjong/advent/geo).
 
 ```
 advent-of-code/
@@ -143,3 +151,10 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2023 | 15  | [Lens Library](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day15.java)                    | 1ms    | 5ms    | [instructions](https://adventofcode.com/2023/day/15) |
 | 2023 | 16  | [The Floor Will Be Lava](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day16.java)          | 11ms   | 464ms  | [instructions](https://adventofcode.com/2023/day/16) |
 | 2023 | 17  | [Clumsy Crucible](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day17.java)                 | 133ms  | 255ms  | [instructions](https://adventofcode.com/2023/day/17) |
+
+### 2024 - solutions
+
+| Year | Day | Name                                                                                         | Part 1 | Part 2 | Assignment                                          |
+|------|-----|----------------------------------------------------------------------------------------------|--------|--------|-----------------------------------------------------|
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 9ms    | 12ms   | [instructions](https://adventofcode.com/2024/day/1) |
+
