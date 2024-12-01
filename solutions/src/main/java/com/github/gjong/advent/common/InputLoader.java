@@ -9,14 +9,22 @@ import java.util.stream.Stream;
 
 public class InputLoader {
 
+    private boolean useLargeFile = false;
     private final String resourceFile;
+    private final String largeResourceFile;
 
     public InputLoader(int year, int day) {
         resourceFile = "/input/%d/day_%02d.txt".formatted(year, day);
+        largeResourceFile = "/input/%d/day_%02d_large.txt".formatted(year, day);
     }
 
     public InputLoader(String resourceFile) {
         this.resourceFile = resourceFile;
+        this.largeResourceFile = resourceFile;
+    }
+
+    public void useLargeFile() {
+        useLargeFile = true;
     }
 
     public Stream<String> splitOnNewLine() {
@@ -61,7 +69,8 @@ public class InputLoader {
     }
 
     private InputStream readInputData() {
-        var resourceStream = getClass().getResourceAsStream(resourceFile);
+        var inputFileName = useLargeFile ? largeResourceFile : resourceFile;
+        var resourceStream = getClass().getResourceAsStream(inputFileName);
         assert resourceStream != null : "Could not read input data.";
 
         return resourceStream;

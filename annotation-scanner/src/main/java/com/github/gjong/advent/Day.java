@@ -1,5 +1,7 @@
 package com.github.gjong.advent;
 
+import com.github.gjong.advent.cdi.Bean;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -12,6 +14,7 @@ import java.lang.annotation.Target;
  * The {@link com.github.gjong.advent.processor.DayProcessor} will automatically create an injectable
  * {@link com.github.gjong.advent.cdi.CdiBean bean} version of this exercise class.
  */
+@Bean(singleton = false)
 @Target({ElementType.TYPE})
 @Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 public @interface Day {

@@ -11,7 +11,8 @@ The repository is organized as a Java project with a submodule named solutions a
 ### Annotation Scanner
 
 The annotation scanner module supports
-the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/processor/DayProcessor.java) of the `DaySolver`
+the [generation](annotation-scanner/src/main/java/com/github/gjong/advent/processor/DayProcessor.java) of the
+`DaySolver`
 class for each year.
 This annotation scanner will add an instance of the DaySolver in the bean context registry.
 
@@ -154,7 +155,7 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 ### 2024 - solutions
 
-| Year | Day | Name                                                                                         | Part 1 | Part 2 | Assignment                                          |
-|------|-----|----------------------------------------------------------------------------------------------|--------|--------|-----------------------------------------------------|
-| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 9ms    | 3ms    | [instructions](https://adventofcode.com/2024/day/1) |
+| Year | Day | Name                                                                                         | Parsing | Part 1 | Part 2 | Assignment                                          |
+|------|-----|----------------------------------------------------------------------------------------------|---------|--------|--------|-----------------------------------------------------|
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 24ms    | 10ms   | 3ms    | [instructions](https://adventofcode.com/2024/day/1) |
 

@@ -15,21 +15,25 @@ import java.util.stream.Collectors;
 public class Day01 implements DaySolver {
 
     private final Validator validator;
+    private final InputLoader inputLoader;
 
-    private final List<Integer> leftList;
-    private final List<Integer> rightList;
+    private List<Integer> leftList;
+    private List<Integer> rightList;
 
     public Day01(Validator validator, InputLoader inputLoader) {
         this.validator = validator;
+        this.inputLoader = inputLoader;
+    }
 
+    @Override
+    public void readInput() {
         leftList = new ArrayList<>();
         rightList = new ArrayList<>();
-        inputLoader.splitOnNewLine()
-                .forEach(line -> {
-                    String[] split = line.split(" +");
-                    leftList.add(Integer.parseInt(split[0]));
-                    rightList.add(Integer.parseInt(split[1]));
-                });
+        inputLoader.consumeLine(line -> {
+            String[] split = line.split(" +");
+            leftList.add(Integer.parseInt(split[0]));
+            rightList.add(Integer.parseInt(split[1]));
+        });
 
         Collections.sort(leftList);
         Collections.sort(rightList);
