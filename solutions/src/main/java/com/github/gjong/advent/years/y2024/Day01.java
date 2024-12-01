@@ -8,6 +8,8 @@ import com.github.gjong.advent.common.Validator;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 @Day(year = 2024, day = 1, name = "Historian Hysteria")
 public class Day01 implements DaySolver {
@@ -52,13 +54,14 @@ public class Day01 implements DaySolver {
 
         int lastLeft = -1;
         int lastCount = 0;
+        var countedRight = rightList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
         for (int left : leftList) {
             if (lastLeft != left) {
                 lastLeft = left;
-                lastCount = (int) rightList.stream()
-                        .mapToInt(Integer::intValue)
-                        .filter(r -> r == left)
-                        .count();
+                var rightCount = countedRight.get(left);
+                lastCount = rightCount != null ? rightCount.intValue() : 0;
             }
 
             similarity += lastCount * lastLeft;
