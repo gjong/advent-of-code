@@ -35,19 +35,17 @@ public class Day03 implements DaySolver {
 
     public void part2() {
         var multiplication = inputLoader.string();
-        var enabled = true;
         var offset = 0;
 
         var answer = 0;
         while (offset < multiplication.length()) {
-            if (multiplication.startsWith("do()", offset)) {
-                enabled = true;
-                offset += 4;
-            } else if (multiplication.startsWith("don't()", offset)) {
-                enabled = false;
-                offset += 7;
-            } else if (enabled && multiplication.startsWith("mul(", offset)) {
-                offset += 4;
+            var nextDont = multiplication.indexOf("don't()", offset);
+            var nextMultiply = multiplication.indexOf("mul(", offset);
+
+            if (nextDont < nextMultiply && nextDont > 0) {
+                offset = multiplication.indexOf("do()", nextDont) + 4;
+            } else if (nextMultiply > 0) {
+                offset = nextMultiply + 4;
                 var closing = multiplication.indexOf(')', offset);
                 if (closing == -1 || closing - offset > 7) {
                     // invalid not max 3 numbers and on ,
@@ -60,13 +58,12 @@ public class Day03 implements DaySolver {
                     continue;
                 }
 
-                var left = multiplication.substring(offset, separator);
-                var right = multiplication.substring(separator + 1, closing);
-
-                answer += Integer.parseInt(left) * Integer.parseInt(right);
+                var numbers = multiplication.substring(offset, closing).split(",");
+                answer += Integer.parseInt(numbers[0]) * Integer.parseInt(numbers[1]);
                 offset = closing;
             } else {
-                offset++;
+                // no more multiplications
+                break;
             }
         }
 

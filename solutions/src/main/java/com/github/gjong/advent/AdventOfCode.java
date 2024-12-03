@@ -13,7 +13,7 @@ public class AdventOfCode {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(AdventOfCode.class);
 
-    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | % 5dms | % 5dms | % 5dms | %-35s |\n";
+    private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | %-5s | %-5s | %-5s | %-35s |\n";
 
     public static void main(String[] args) {
         if (args.length == 1) {
@@ -59,9 +59,14 @@ public class AdventOfCode {
         LOGGER.info("-".repeat(80));
     }
 
-    private static long measure(Runnable runnable) {
+    private static String measure(Runnable runnable) {
         var start = Instant.now();
         runnable.run();
-        return Duration.between(start, Instant.now()).toMillis();
+        var duration = Duration.between(start, Instant.now()).toNanos() / 1000;
+        if (duration > 1000) {
+            return duration / 1000 + "ms";
+        }
+
+        return duration + "μs";
     }
 }
