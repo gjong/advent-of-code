@@ -19,3 +19,6 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# exclude any large data sets from commits
+day_*_large.txt
