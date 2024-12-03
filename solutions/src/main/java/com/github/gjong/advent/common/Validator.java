@@ -68,4 +68,8 @@ public class Validator {
 
         return matching;
     }
+
+    protected boolean hasAnswer(String key) {
+        return answers.containsKey(key);
+    }
 }

@@ -159,4 +159,5 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 |------|-----|----------------------------------------------------------------------------------------------|---------|--------|--------|-----------------------------------------------------|
 | 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 24ms    | 9ms    | 3ms    | [instructions](https://adventofcode.com/2024/day/1) |
 | 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)  | 0ms     | 12ms   | 7ms    | [instructions](https://adventofcode.com/2024/day/2) |
+| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)       | 0ms     | 5ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/3) |
 

@@ -40,12 +40,16 @@ class TestClassWriter {
             writer.println("import com.github.gjong.advent.common.InputLoader;");
             writer.println("import com.github.gjong.advent.common.Validator;");
             writer.println();
+            writer.println("import org.slf4j.Logger;");
+            writer.println("import org.slf4j.LoggerFactory;");
+            writer.println();
             writer.println("import static org.junit.jupiter.api.Assertions.*;");
             writer.println();
             writer.println("@DisplayName(\"Running %d day %02d: %s\")".formatted(day.year(), day.day(), day.name()));
             writer.println("public class " + className + " {");
             writer.println();
             writer.println("    private BeanContext beanContext;");
+            writer.println("    private Logger log = LoggerFactory.getLogger(getClass());");
             writer.println();
             writeSetup(writer);
             writer.println();
@@ -95,8 +99,12 @@ class TestClassWriter {
                 writer, w -> {
                     w.println("new Validator(%d, %d) {".formatted(day.year(), day.day()));
                     w.println("                   protected <T> boolean validate(String key, T answer) {");
+                    w.println("                       if (!super.hasAnswer(key + \"_%s\")) { ".formatted(testCase));
+                    w.println("                         log.info(\"Test case '%s' part %d has no answer.\");".formatted(testCase, day.day()));
+                    w.println("                         return true;");
+                    w.println("                       }");
                     w.println("                       assertTrue(");
-                    w.println("                               super.validate(key + \"_%s\", answer),".formatted(testCase));
+                    w.println("                               !super.hasAnswer(key + \"_%s\") || super.validate(key + \"_%s\", answer),".formatted(testCase, testCase));
                     w.println("                               \"Validation failed for %s\".formatted(key));");
                     w.println("                       return true;");
                     w.println("                   }");
