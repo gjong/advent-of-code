@@ -4,8 +4,9 @@ import org.slf4j.Logger;
 
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class AdventOfCode {
 
@@ -14,57 +15,99 @@ public class AdventOfCode {
     private static final String LINE_TEMPLATE = "| % 5d |  %02d  | %-35s | %-5s | %-5s | %-5s | %-35s |\n";
 
     public static void main(String[] args) {
-        if (args.length == 1) {
-            var year = Integer.parseInt(args[0]);
-            analyzeYear(year, SolutionProvider.instance().provide(year));
-        } else {
-            var solutionsPerYear = SolutionProvider.instance().provideAll();
-            solutionsPerYear.keySet()
-                    .stream()
-                    .sorted()
-                    .forEach(year -> analyzeYear(year, solutionsPerYear.get(year)));
+        var arguments = new CliParser(args);
+        if (!arguments.shouldRun()) {
+            System.exit(0);
+        }
+
+        var supportedYears = SolutionProvider.instance()
+                .listYears();
+
+        var runYears = List.copyOf(supportedYears);
+        if (arguments.year() > -1) {
+            runYears = List.of(arguments.year());
+        }
+
+        LOGGER.info("Running with {} benchmark runs.", determineNumberOfRuns(arguments));
+        for (var year : runYears) {
+            var suite = new BenchmarkSuite(determineNumberOfRuns(arguments), year, SolutionProvider.instance().provide(year));
+            var results = benchmark(suite);
+
+            LOGGER.info("");
+            LOGGER.info("-".repeat(80));
+            LOGGER.info("                              Advent of Code {}", year);
+            LOGGER.info("-".repeat(80));
+
+            var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s | %-7s | %-35s |\n".formatted("Year", "Day", "Name", "Parsing", "Part 1", "Part 2", "Assignment"))
+                    .append("|-------|------|-------------------------------------|---------|---------|---------|----------------------------|\n");
+            results.forEach(result -> {
+                solutionOutput.append(
+                        LINE_TEMPLATE.formatted(
+                                result.year,
+                                result.day,
+                                "[%s](solutions/src/main/java/com/github/gjong/advent/years/y%d/%s.java)".formatted(
+                                        result.name(),
+                                        result.year(),
+                                        result.className()),
+                                prettify(result.prepNanos),
+                                prettify(result.part1Nanos),
+                                prettify(result.part2Nanos),
+                                "[instructions](https://adventofcode.com/%d/day/%d)".formatted(result.year(), result.day()))
+                );
+            });
+
+            LOGGER.info("Year {} performance statistics:\n\n{}", year, solutionOutput);
+            LOGGER.info("-".repeat(80));
         }
     }
 
-    private static void analyzeYear(int year, List<DaySolver> days) {
-        LOGGER.info("");
-        LOGGER.info("-".repeat(80));
-        LOGGER.info("                              Advent of Code {}", year);
-        LOGGER.info("-".repeat(80));
-
-        var solutionOutput = new StringBuilder("| %-5s | %-4s | %-35s | %-7s | %-7s | %-7s | %-35s |\n".formatted("Year", "Day", "Name", "Parsing", "Part 1", "Part 2", "Assignment"))
-                .append("|-------|------|-------------------------------------|---------|---------|---------|----------------------------|\n");
-        days.stream()
-                .sorted(Comparator.comparingInt(a -> a.getClass().getAnnotation(Day.class).day()))
-                .forEach(daySolver -> {
-                    var day = daySolver.getClass().getAnnotation(Day.class).day();
-
-                    solutionOutput.append(
-                            LINE_TEMPLATE.formatted(
-                                    year,
-                                    day,
-                                    "[%s](solutions/src/main/java/com/github/gjong/advent/years/y%d/%s.java)".formatted(
-                                            daySolver.getClass().getAnnotation(Day.class).name(),
-                                            year,
-                                            daySolver.getClass().getSimpleName()),
-                                    measure(daySolver::readInput),
-                                    measure(daySolver::part1),
-                                    measure(daySolver::part2),
-                                    "[instructions](https://adventofcode.com/%d/day/%d)".formatted(year, day)));
-                });
-
-        LOGGER.info("Year {} performance statistics:\n\n{}", year, solutionOutput);
-        LOGGER.info("-".repeat(80));
+    private static int determineNumberOfRuns(CliParser parser) {
+        return parser.benchmarkMode() ?
+                parser.benchMarkRuns()
+                : 1;
     }
 
-    private static String measure(Runnable runnable) {
+    private record BenchmarkResult(int year, int day, int part1Nanos, int part2Nanos, int prepNanos, String name, String className) {
+    }
+
+    private record BenchmarkSuite(int runs, int year, List<DaySolver> days) {
+    }
+
+    private static String prettify(int nanos) {
+        if (nanos == 0) return "0";
+        if (nanos > 1200) return (nanos / 1000) + "ms";
+        return nanos + "μs";
+    }
+
+    private static Stream<BenchmarkResult> benchmark(BenchmarkSuite suite) {
+        var results = new ArrayList<BenchmarkResult>();
+        for (var solver : suite.days) {
+            var day = solver.getClass().getAnnotation(Day.class);
+
+            var part1Total = 0L;
+            var part2Total = 0L;
+
+            var prepareTime = measure(solver::readInput);
+            for (var run = 0; run < suite.runs; run++) {
+                part1Total += measure(solver::part1);
+                part2Total += measure(solver::part2);
+            }
+
+            results.add(new BenchmarkResult(
+                    suite.year(),
+                    day.day(),
+                    (int) prepareTime,
+                    Math.round(part1Total / (float) suite.runs),
+                    Math.round(part2Total / (float) suite.runs),
+                    day.name(),
+                    solver.getClass().getSimpleName()));
+        }
+        return results.stream();
+    }
+
+    private static long measure(Runnable runnable) {
         var start = Instant.now();
         runnable.run();
-        var duration = Duration.between(start, Instant.now()).toNanos() / 1000;
-        if (duration > 1000) {
-            return duration / 1000 + "ms";
-        }
-
-        return duration + "μs";
+        return Duration.between(start, Instant.now()).toNanos() / 1000;
     }
 }

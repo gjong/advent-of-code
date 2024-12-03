@@ -72,10 +72,18 @@ The project is built using Gradle, so you can run the solutions using the follow
 
 ```shell
 echo "Running solutions for 2021"
-./gradlew run --args="2021"
+./gradlew run --args="-y 2021"
 
 echo "Running solutions for all years"
 ./gradlew run
+```
+
+The CLI supports the following arguments:
+```
+[cli] Execute using the following options:
+[cli]       -y <year>  Execute only the provided year.
+[cli]       -b         Run in benchmark mode.
+[cli]       -r         Number of runs in benchmark mode, default 5.
 ```
 
 ## Solution statistics
@@ -157,7 +165,8 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 | Year | Day | Name                                                                                         | Parsing | Part 1 | Part 2 | Assignment                                          |
 |------|-----|----------------------------------------------------------------------------------------------|---------|--------|--------|-----------------------------------------------------|
-| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 24ms    | 9ms    | 3ms    | [instructions](https://adventofcode.com/2024/day/1) |
-| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)  | 0ms     | 12ms   | 7ms    | [instructions](https://adventofcode.com/2024/day/2) |
-| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)       | 0ms     | 5ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/3) |
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 205μs   | 22ms   | 257μs  | [instructions](https://adventofcode.com/2024/day/1) |
+| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)  | 1ms     | 0      | 1ms    | [instructions](https://adventofcode.com/2024/day/2) |
+| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)       | 439μs   | 0      | 556μs  | [instructions](https://adventofcode.com/2024/day/3) |
+
 

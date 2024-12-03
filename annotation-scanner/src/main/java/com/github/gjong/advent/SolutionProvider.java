@@ -19,6 +19,14 @@ public class SolutionProvider {
         context = beanContext;
     }
 
+    public List<Integer> listYears() {
+        return StreamSupport.stream(context.provideAll(DaySolver.class).spliterator(), false)
+                .map(solver -> solver.getClass().getAnnotation(Day.class).year())
+                .sorted()
+                .distinct()
+                .toList();
+    }
+
     public List<DaySolver> provide(int year) {
         return StreamSupport.stream(context.provideAll(DaySolver.class).spliterator(), false)
                 .filter(solver -> solver.getClass().getAnnotation(Day.class).year() == year)
