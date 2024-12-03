@@ -5,8 +5,6 @@ import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 
 @Day(year = 2024, day = 3, name = "Mull it over")
