@@ -112,6 +112,7 @@ class TestClassWriter {
                 });
         writer.println(");");
         writer.println("        var daySolver = beanContext.provide(%s.class);".formatted(definition.type().getSimpleName()));
+        writer.println("        daySolver.readInput();");
         writer.println("        daySolver.part%d();".formatted(part));
         writer.println("    }");
         writer.println();
