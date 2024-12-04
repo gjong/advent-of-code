@@ -1,5 +1,6 @@
 package com.github.gjong.advent.geo;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public record Point(int x, int y) {
@@ -63,6 +64,26 @@ public record Point(int x, int y) {
                 this.translate(0, - 1),
                 this.translate(-1, 0),
                 this.translate(1, 0));
+    }
+
+    public Set<Point> cornerNeighbours() {
+        return Set.of(
+                this.translate(1, 1),
+                this.translate(-1, -1),
+                this.translate(-1, 1),
+                this.translate(1, -1));
+    }
+
+    /**
+     * Generate a list of all directly attached points.
+     * Similar to {@link #neighbours()}, but includes the vertical neighbours as well.
+     *
+     * @return
+     */
+    public Set<Point> allNeighbours() {
+        var neighbours = new HashSet<>(neighbours());
+        neighbours.addAll(cornerNeighbours());
+        return neighbours;
     }
 
     public Point left() {

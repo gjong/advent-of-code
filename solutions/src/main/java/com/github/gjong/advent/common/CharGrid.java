@@ -3,6 +3,9 @@ package com.github.gjong.advent.common;
 import com.github.gjong.advent.geo.Point;
 import com.github.gjong.advent.geo.Bounds;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CharGrid {
 
     private final char[][] grid;
@@ -34,6 +37,9 @@ public class CharGrid {
     }
 
     public char at(int x, int y) {
+        if (x < 0 || x >= cols() || y < 0 || y >= rows()) {
+            return ' ';
+        }
         return grid[y][x];
     }
 
@@ -55,6 +61,18 @@ public class CharGrid {
 
     public char[][] grid() {
         return grid;
+    }
+
+    public List<Point> findChar(char c) {
+        var matches = new ArrayList<Point>();
+        for (var x = 0; x < cols(); x++) {
+            for (var y = 0; y < rows(); y++) {
+                if (at(x, y) == c) {
+                    matches.add(new Point(x, y));
+                }
+            }
+        }
+        return matches;
     }
 
     /**

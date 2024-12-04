@@ -2,6 +2,9 @@ package com.github.gjong.advent;
 
 import org.slf4j.Logger;
 
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -96,9 +99,9 @@ public class AdventOfCode {
             results.add(new BenchmarkResult(
                     suite.year(),
                     day.day(),
+                    new BigDecimal(part1Total).divide(new BigDecimal(suite.runs), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
+                    new BigDecimal(part2Total).divide(new BigDecimal(suite.runs), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
                     (int) prepareTime,
-                    Math.round(part1Total / (float) suite.runs),
-                    Math.round(part2Total / (float) suite.runs),
                     day.name(),
                     solver.getClass().getSimpleName()));
         }
