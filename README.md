@@ -93,6 +93,13 @@ Each solution is timed using the `Instant.now()` method, and the results are dis
 The time is measured in milliseconds and includes the time to read the input, run the solution, and validating the
 output.
 
+The benchmarking is achieved by running the following command:
+
+```shell
+echo "Running solutions for 2021"
+./gradlew run --args="-y 2021 -b -r 100"
+```
+
 The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 :information_source: Click on the name of a solution to go to the related source file.
@@ -166,9 +173,10 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 | Year | Day | Name                                                                                         | Parsing | Part 1 | Part 2 | Assignment                                          |
 |------|-----|----------------------------------------------------------------------------------------------|---------|--------|--------|-----------------------------------------------------|
-| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 22ms    | 10ms   | 3ms    | [instructions](https://adventofcode.com/2024/day/1) |
-| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)  | 0       | 11ms   | 6ms    | [instructions](https://adventofcode.com/2024/day/2) |
-| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)       | 0       | 4ms    | 512μs  | [instructions](https://adventofcode.com/2024/day/3) |
-| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)       | 0       | 27ms   | 4ms    | [instructions](https://adventofcode.com/2024/day/4) |
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java) | 23ms    | 190μs  | 326μs  | [instructions](https://adventofcode.com/2024/day/1) |
+| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)  | 0       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/2) |
+| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)       | 0       | 621μs  | 396μs  | [instructions](https://adventofcode.com/2024/day/3) |
+| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)       | 0       | 2ms    | 965μs  | [instructions](https://adventofcode.com/2024/day/4) |
+| 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)        | 4ms     | 1ms    | 2ms    | [instructions](https://adventofcode.com/2024/day/5) |
 
 
