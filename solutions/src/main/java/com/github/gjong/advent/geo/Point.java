@@ -26,6 +26,10 @@ public record Point(int x, int y) {
                 && (y >= (other.y - 1) && y <= (other.y + 1));
     }
 
+    public Point subtract(Point other) {
+        return new Point(x - other.x, y - other.y);
+    }
+
     public static Point zero = new Point(0, 0);
 
     public static Point of(int x, int y) {
