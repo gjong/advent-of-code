@@ -89,7 +89,7 @@ public class Day06 implements DaySolver {
             }
         }
 
-        validator.part1(visited.size());
+        validator.part2(visited.size());
     }
 
     private record PointWithDirection(Point point, Point direction) {}

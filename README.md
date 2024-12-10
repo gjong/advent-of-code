@@ -179,6 +179,8 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)       | 0       | 2ms    | 965μs  | [instructions](https://adventofcode.com/2024/day/4) |
 | 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)        | 4ms     | 1ms    | 2ms    | [instructions](https://adventofcode.com/2024/day/5) |
 | 2024 | 06  | [Guard Gallivant](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day06.java)    | 2ms     | 26ms   | -      | [instructions](https://adventofcode.com/2024/day/6) |
-| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)      | 0       | 64ms   | 5939ms | [instructions](https://adventofcode.com/2024/day/7) |
+| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)      | 0       | 64ms   | 6361ms | [instructions](https://adventofcode.com/2024/day/7) |
+| 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)    | 0       | 16ms   | 195ms  | [instructions](https://adventofcode.com/2024/day/9) |
+
 
 
