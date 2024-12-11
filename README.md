@@ -183,4 +183,4 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2024 | 08  | [Resonant Collinearity](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day08.java) | 1087μs  | 51μs   | 111μs  | [instructions](https://adventofcode.com/2024/day/8)  |
 | 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)       | -       | 1065μs | 89ms   | [instructions](https://adventofcode.com/2024/day/9)  |
 | 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | -       | 664μs  | 937μs  | [instructions](https://adventofcode.com/2024/day/10) |
-
+| 2024 | 11  | [Plutonian Pebbles](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day11.java)     | -       | 8ms    | 73ms   | [instructions](https://adventofcode.com/2024/day/11) |

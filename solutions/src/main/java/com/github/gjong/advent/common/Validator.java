@@ -18,9 +18,9 @@ public class Validator {
         answers = new Properties();
         logger = LoggerFactory.getLogger(getClass());
         try {
-            answers.load(getClass().getResourceAsStream("/solutions/%d/day_%02d.properties".formatted(year, day)));
+            answers.load(Validator.class.getResourceAsStream("/solutions/%d/day_%02d.properties".formatted(year, day)));
         } catch (Exception e) {
-            logger.trace("Could not load answers for day %d.".formatted(day));
+            logger.trace("Could not load answers for day {}.", day);
         }
     }
 
