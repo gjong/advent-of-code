@@ -8,6 +8,7 @@ import com.github.gjong.advent.geo.Bounds;
 import com.github.gjong.advent.geo.Point;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 @Day(year = 2024, day = 8, name = "Resonant Collinearity")
 public class Day08 implements DaySolver {
@@ -43,7 +44,7 @@ public class Day08 implements DaySolver {
     public void part1() {
         var answer = parsedGrid.entrySet()
                 .stream()
-                .flatMap(e -> getAntiNodes(e.getValue(), false).stream())
+                .flatMap(e -> getAntiNodes(e.getValue(), false))
                 .distinct()
                 .count();
 
@@ -54,19 +55,18 @@ public class Day08 implements DaySolver {
     public void part2() {
         var answer = parsedGrid.entrySet()
                 .stream()
-                .flatMap(e -> {
-                    var antiNodes = getAntiNodes(e.getValue(), true);
-                    antiNodes.addAll(e.getValue());
-                    return antiNodes.stream();
-                })
+                .flatMap(e -> getAntiNodes(e.getValue(), true))
                 .distinct()
                 .count();
 
         validator.part2(answer);
     }
 
-    public Set<Point> getAntiNodes(List<Point> nodes, boolean isLine) {
+    public Stream<Point> getAntiNodes(List<Point> nodes, boolean isLine) {
         var antiNodes = new HashSet<Point>();
+        if (isLine) {
+            antiNodes.addAll(nodes);
+        }
 
         for (int i = 0; i < nodes.size() - 1; i++) {
             for (int j = i + 1; j < nodes.size(); j++) {
@@ -93,6 +93,6 @@ public class Day08 implements DaySolver {
             }
         }
 
-        return antiNodes;
+        return antiNodes.stream();
     }
 }

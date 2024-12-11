@@ -9,6 +9,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class AdventOfCode {
@@ -89,18 +90,20 @@ public class AdventOfCode {
 
             var part1Total = 0L;
             var part2Total = 0L;
+            var part1Limit = limitedRunConfig(solver, 1);
+            var part2Limit = limitedRunConfig(solver, 2);
 
             var prepareTime = measure(solver::readInput);
             for (var run = 0; run < suite.runs; run++) {
-                part1Total += measure(solver::part1);
-                part2Total += measure(solver::part2);
+                if (run < part1Limit) part1Total += measure(solver::part1);
+                if (run < part2Limit) part2Total += measure(solver::part2);
             }
 
             results.add(new BenchmarkResult(
                     suite.year(),
                     day.day(),
-                    new BigDecimal(part1Total).divide(new BigDecimal(suite.runs), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
-                    new BigDecimal(part2Total).divide(new BigDecimal(suite.runs), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
+                    new BigDecimal(part1Total).divide(new BigDecimal(Math.min(suite.runs, part1Limit)), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
+                    new BigDecimal(part2Total).divide(new BigDecimal(Math.min(suite.runs, part2Limit)), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
                     (int) prepareTime,
                     day.name(),
                     solver.getClass().getSimpleName()));
@@ -112,5 +115,17 @@ public class AdventOfCode {
         var start = Instant.now();
         runnable.run();
         return Duration.between(start, Instant.now()).toNanos() / 1000;
+    }
+
+    private static int limitedRunConfig(DaySolver solver, int part) {
+        try {
+            var method = solver.getClass().getMethod("part" + part);
+            return Optional.ofNullable(method.getAnnotation(LimitRuns.class))
+                    .map(LimitRuns::value)
+                    .orElse(Integer.MAX_VALUE);
+        } catch (NoSuchMethodException nme) {
+            System.out.println("Method not found: " + nme.getMessage());
+            return Integer.MAX_VALUE;
+        }
     }
 }
