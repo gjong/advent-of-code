@@ -130,56 +130,57 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 ### 2022 - solutions
 
-| Year | Day | Name                                                                                              | Part 1 | Part 2 | Assignment                                           |
-|------|-----|---------------------------------------------------------------------------------------------------|--------|--------|------------------------------------------------------|
-| 2022 | 01  | [Calorie Counting](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day01.java)        | 2ms    | 2ms    | [instructions](https://adventofcode.com/2022/day/1)  |
-| 2022 | 02  | [Rock Paper Scissors](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day02.java)     | 1ms    | 2ms    | [instructions](https://adventofcode.com/2022/day/2)  |
-| 2022 | 03  | [Rucksack Reorganization](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day03.java) | 6ms    | 4ms    | [instructions](https://adventofcode.com/2022/day/3)  |
-| 2022 | 04  | [Camp Cleanup](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day04.java)            | 13ms   | 3ms    | [instructions](https://adventofcode.com/2022/day/4)  |
-| 2022 | 05  | [Supply Stacks](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day05.java)           | 6ms    | 5ms    | [instructions](https://adventofcode.com/2022/day/5)  |
-| 2022 | 06  | [Tuning Trouble](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day06.java)          | 3ms    | 2ms    | [instructions](https://adventofcode.com/2022/day/6)  |
-| 2022 | 07  | [No Space Left On Device](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day07.java) | 7ms    | 7ms    | [instructions](https://adventofcode.com/2022/day/7)  |
-| 2022 | 08  | [Treetop Tree House](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day08.java)      | 4ms    | 3ms    | [instructions](https://adventofcode.com/2022/day/8)  |
-| 2022 | 09  | [Rope Bridge](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day09.java)             | 7ms    | 9ms    | [instructions](https://adventofcode.com/2022/day/9)  |
-| 2022 | 10  | [Cathode-Ray Tube](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day10.java)        | 2ms    | 2ms    | [instructions](https://adventofcode.com/2022/day/10) |
-| 2022 | 11  | [Monkey in the Middle](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day11.java)    | 9ms    | 107ms  | [instructions](https://adventofcode.com/2022/day/11) |
-| 2022 | 12  | [Hill Climbing Algorithm](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day12.java) | 12ms   | 170ms  | [instructions](https://adventofcode.com/2022/day/12) |
-| 2022 | 13  | [Distress Signal](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day13.java)         | 7ms    | 4ms    | [instructions](https://adventofcode.com/2022/day/13) |
-| 2022 | 14  | [Regolith Reservoir](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day14.java)      | 8ms    | 95ms   | [instructions](https://adventofcode.com/2022/day/14) |
+| Year | Day | Name                                                                                              | Parsing | Part 1 | Part 2 | Assignment                                           |
+|------|-----|---------------------------------------------------------------------------------------------------|---------|--------|--------|------------------------------------------------------|
+| 2022 | 01  | [Calorie Counting](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day01.java)        | -       | 1078μs | 636μs  | [instructions](https://adventofcode.com/2022/day/1)  |
+| 2022 | 02  | [Rock Paper Scissors](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day02.java)     | -       | 478μs  | 620μs  | [instructions](https://adventofcode.com/2022/day/2)  |
+| 2022 | 03  | [Rucksack Reorganization](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day03.java) | -       | 1187μs | 1ms    | [instructions](https://adventofcode.com/2022/day/3)  |
+| 2022 | 04  | [Camp Cleanup](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day04.java)            | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2022/day/4)  |
+| 2022 | 05  | [Supply Stacks](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day05.java)           | -       | 952μs  | 1ms    | [instructions](https://adventofcode.com/2022/day/5)  |
+| 2022 | 06  | [Tuning Trouble](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day06.java)          | -       | 701μs  | 1031μs | [instructions](https://adventofcode.com/2022/day/6)  |
+| 2022 | 07  | [No Space Left On Device](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day07.java) | -       | 833μs  | 1137μs | [instructions](https://adventofcode.com/2022/day/7)  |
+| 2022 | 08  | [Treetop Tree House](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day08.java)      | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2022/day/8)  |
+| 2022 | 09  | [Rope Bridge](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day09.java)             | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2022/day/9)  |
+| 2022 | 10  | [Cathode-Ray Tube](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day10.java)        | -       | 531μs  | 257μs  | [instructions](https://adventofcode.com/2022/day/10) |
+| 2022 | 11  | [Monkey in the Middle](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day11.java)    | -       | 603μs  | 43ms   | [instructions](https://adventofcode.com/2022/day/11) |
+| 2022 | 12  | [Hill Climbing Algorithm](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day12.java) | -       | 1ms    | 90ms   | [instructions](https://adventofcode.com/2022/day/12) |
+| 2022 | 13  | [Distress Signal](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day13.java)         | -       | 2ms    | 2ms    | [instructions](https://adventofcode.com/2022/day/13) |
+| 2022 | 14  | [Regolith Reservoir](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day14.java)      | -       | 1ms    | 65ms   | [instructions](https://adventofcode.com/2022/day/14) |
 
 ### 2023 - solutions
 
-| Year | Day | Name                                                                                                      | Part 1 | Part 2 | Assignment                                           |
-|------|-----|-----------------------------------------------------------------------------------------------------------|--------|--------|------------------------------------------------------|
-| 2023 | 01  | [Trebuchet?!](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day01.java)                     | 3ms    | 13ms   | [instructions](https://adventofcode.com/2023/day/1)  |
-| 2023 | 02  | [Cube Conundrum](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day02.java)                  | 1ms    | 1ms    | [instructions](https://adventofcode.com/2023/day/2)  |
-| 2023 | 03  | [Gear Ratios](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day03.java)                     | 24ms   | 15ms   | [instructions](https://adventofcode.com/2023/day/3)  |
-| 2023 | 04  | [Scratchcards](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day04.java)                    | 6ms    | 6ms    | [instructions](https://adventofcode.com/2023/day/4)  |
-| 2023 | 05  | [If You Give A Seed A Fertilizer](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day05.java) | 3ms    | 3ms    | [instructions](https://adventofcode.com/2023/day/5)  |
-| 2023 | 06  | [Wait For It](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day06.java)                     | 0ms    | 0ms    | [instructions](https://adventofcode.com/2023/day/6)  |
-| 2023 | 07  | [Camel Cards](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day07.java)                     | 11ms   | 9ms    | [instructions](https://adventofcode.com/2023/day/7)  |
-| 2023 | 08  | [Haunted Wasteland](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day08.java)               | 6ms    | 9ms    | [instructions](https://adventofcode.com/2023/day/8)  |
-| 2023 | 09  | [Mirage Maintenance](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day09.java)              | 6ms    | 4ms    | [instructions](https://adventofcode.com/2023/day/9)  |
-| 2023 | 10  | [Pipe Maze](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day10.java)                       | 54ms   | 0ms    | [instructions](https://adventofcode.com/2023/day/10) |
-| 2023 | 11  | [Cosmic Expansion](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day11.java)                | 19ms   | 5ms    | [instructions](https://adventofcode.com/2023/day/11) |
-| 2023 | 12  | [Hot Springs](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day12.java)                     | 16ms   | 76ms   | [instructions](https://adventofcode.com/2023/day/12) |
-| 2023 | 13  | [Point of Incidence](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day13.java)              | 2ms    | 0ms    | [instructions](https://adventofcode.com/2023/day/13) |
-| 2023 | 14  | [Parabolic Reflector Dish](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day14.java)        | 26ms   | 1651ms | [instructions](https://adventofcode.com/2023/day/14) |
-| 2023 | 15  | [Lens Library](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day15.java)                    | 1ms    | 5ms    | [instructions](https://adventofcode.com/2023/day/15) |
-| 2023 | 16  | [The Floor Will Be Lava](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day16.java)          | 11ms   | 464ms  | [instructions](https://adventofcode.com/2023/day/16) |
-| 2023 | 17  | [Clumsy Crucible](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day17.java)                 | 133ms  | 255ms  | [instructions](https://adventofcode.com/2023/day/17) |
+| Year | Day | Name                                                                                                      | Parsing | Part 1 | Part 2 | Assignment                                           |
+|------|-----|-----------------------------------------------------------------------------------------------------------|---------|--------|--------|------------------------------------------------------|
+| 2023 | 01  | [Trebuchet?!](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day01.java)                     | -       | 986μs  | 3ms    | [instructions](https://adventofcode.com/2023/day/1)  |
+| 2023 | 02  | [Cube Conundrum](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day02.java)                  | -       | 709μs  | 747μs  | [instructions](https://adventofcode.com/2023/day/2)  |
+| 2023 | 03  | [Gear Ratios](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day03.java)                     | -       | 5ms    | 3ms    | [instructions](https://adventofcode.com/2023/day/3)  |
+| 2023 | 04  | [Scratchcards](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day04.java)                    | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2023/day/4)  |
+| 2023 | 05  | [If You Give A Seed A Fertilizer](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day05.java) | -       | 789μs  | 977μs  | [instructions](https://adventofcode.com/2023/day/5)  |
+| 2023 | 06  | [Wait For It](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day06.java)                     | -       | 180μs  | 128μs  | [instructions](https://adventofcode.com/2023/day/6)  |
+| 2023 | 07  | [Camel Cards](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day07.java)                     | -       | 2ms    | 2ms    | [instructions](https://adventofcode.com/2023/day/7)  |
+| 2023 | 08  | [Haunted Wasteland](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day08.java)               | -       | 2ms    | 2ms    | [instructions](https://adventofcode.com/2023/day/8)  |
+| 2023 | 09  | [Mirage Maintenance](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day09.java)              | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2023/day/9)  |
+| 2023 | 10  | [Pipe Maze](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day10.java)                       | -       | 15ms   | -      | [instructions](https://adventofcode.com/2023/day/10) |
+| 2023 | 11  | [Cosmic Expansion](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day11.java)                | -       | 2ms    | 1ms    | [instructions](https://adventofcode.com/2023/day/11) |
+| 2023 | 12  | [Hot Springs](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day12.java)                     | -       | 3ms    | 24ms   | [instructions](https://adventofcode.com/2023/day/12) |
+| 2023 | 13  | [Point of Incidence](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day13.java)              | -       | 661μs  | 490μs  | [instructions](https://adventofcode.com/2023/day/13) |
+| 2023 | 14  | [Parabolic Reflector Dish](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day14.java)        | -       | 5ms    | 1539ms | [instructions](https://adventofcode.com/2023/day/14) |
+| 2023 | 15  | [Lens Library](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day15.java)                    | -       | 369μs  | 1ms    | [instructions](https://adventofcode.com/2023/day/15) |
+| 2023 | 16  | [The Floor Will Be Lava](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day16.java)          | -       | 2ms    | 65ms   | [instructions](https://adventofcode.com/2023/day/16) |
+| 2023 | 17  | [Clumsy Crucible](solutions/src/main/java/com/github/gjong/advent/years/y2023/Day17.java)                 | -       | 80ms   | 239ms  | [instructions](https://adventofcode.com/2023/day/17) |
 
 ### 2024 - solutions
 
 | Year | Day | Name                                                                                            | Parsing | Part 1 | Part 2 | Assignment                                           |
 |------|-----|-------------------------------------------------------------------------------------------------|---------|--------|--------|------------------------------------------------------|
-| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java)    | 25ms    | 235μs  | 311μs  | [instructions](https://adventofcode.com/2024/day/1)  |
-| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)     | 0       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/2)  |
-| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)          | 0       | 586μs  | 480μs  | [instructions](https://adventofcode.com/2024/day/3)  |
-| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)          | 0       | 2ms    | 1124μs | [instructions](https://adventofcode.com/2024/day/4)  |
-| 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)           | 4ms     | 2ms    | 2ms    | [instructions](https://adventofcode.com/2024/day/5)  |
-| 2024 | 06  | [Guard Gallivant](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day06.java)       | 1ms     | 6ms    | -      | [instructions](https://adventofcode.com/2024/day/6)  |
-| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)         | 0       | 32ms   | 6261ms | [instructions](https://adventofcode.com/2024/day/7)  |
-| 2024 | 08  | [Resonant Collinearity](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day08.java) | 1ms     | 80μs   | 90μs   | [instructions](https://adventofcode.com/2024/day/8)  |
-| 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)       | 0       | 1ms    | 89ms   | [instructions](https://adventofcode.com/2024/day/9)  |
-| 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | 0       | 716μs  | 825μs  | [instructions](https://adventofcode.com/2024/day/10) |
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java)    | 20ms    | 221μs  | 269μs  | [instructions](https://adventofcode.com/2024/day/1)  |
+| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)     | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/2)  |
+| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)          | -       | 606μs  | 394μs  | [instructions](https://adventofcode.com/2024/day/3)  |
+| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)          | -       | 2ms    | 958μs  | [instructions](https://adventofcode.com/2024/day/4)  |
+| 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)           | 5ms     | 2ms    | 2ms    | [instructions](https://adventofcode.com/2024/day/5)  |
+| 2024 | 06  | [Guard Gallivant](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day06.java)       | 1ms     | 6ms    | 6ms    | [instructions](https://adventofcode.com/2024/day/6)  |
+| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)         | -       | 32ms   | 6863ms | [instructions](https://adventofcode.com/2024/day/7)  |
+| 2024 | 08  | [Resonant Collinearity](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day08.java) | 1087μs  | 51μs   | 111μs  | [instructions](https://adventofcode.com/2024/day/8)  |
+| 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)       | -       | 1065μs | 89ms   | [instructions](https://adventofcode.com/2024/day/9)  |
+| 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | -       | 664μs  | 937μs  | [instructions](https://adventofcode.com/2024/day/10) |
+

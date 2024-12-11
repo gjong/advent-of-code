@@ -78,7 +78,7 @@ public class AdventOfCode {
     }
 
     private static String prettify(int nanos) {
-        if (nanos == 0) return "0";
+        if (nanos == 0) return "-";
         if (nanos > 1200) return (nanos / 1000) + "ms";
         return nanos + "μs";
     }
