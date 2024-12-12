@@ -24,6 +24,14 @@ public record Vector(Point start, Point end) {
         return points;
     }
 
+    public boolean extendsTo(Point point) {
+        var direction = direction();
+
+        if (start.translate(direction.inverse()).equals(point)) {
+            return true;
+        } else return end.translate(direction).equals(point);
+    }
+
     public Point intersectY(int y) {
         var dy = y - start.y();
         var dx = (end.x() - start.x()) / (end.y() - start.y());
