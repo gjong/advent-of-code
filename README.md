@@ -185,4 +185,4 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | -       | 664μs  | 937μs   | [instructions](https://adventofcode.com/2024/day/10) |
 | 2024 | 11  | [Plutonian Pebbles](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day11.java)     | -       | 487μs  | 32ms    | [instructions](https://adventofcode.com/2024/day/11) |
 | 2024 | 12  | [Garden Groups](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day12.java)         | -       | 6ms    | 10ms    | [instructions](https://adventofcode.com/2024/day/12) |
-| 2024 | 13  | [Claw Contraption](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day13.java)      | 12ms    | 999μs  | 1ms     | [instructions](https://adventofcode.com/2024/day/13) |
+| 2024 | 13  | [Claw Contraption](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day13.java)      | 8ms     | 36μs   | 99μs    | [instructions](https://adventofcode.com/2024/day/13) |

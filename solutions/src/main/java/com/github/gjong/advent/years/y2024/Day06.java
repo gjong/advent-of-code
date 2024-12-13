@@ -2,6 +2,7 @@ package com.github.gjong.advent.years.y2024;
 
 import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
+import com.github.gjong.advent.LimitRuns;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 import com.github.gjong.advent.geo.Bounds;
@@ -98,6 +99,7 @@ public class Day06 implements DaySolver {
     }
 
     @Override
+    @LimitRuns
     public void part2() {
         var counter = new AtomicInteger();
         try (var executors = Executors.newVirtualThreadPerTaskExecutor()) {
