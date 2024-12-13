@@ -171,17 +171,18 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 ### 2024 - solutions
 
-| Year | Day | Name                                                                                            | Parsing | Part 1 | Part 2 | Assignment                                           |
-|------|-----|-------------------------------------------------------------------------------------------------|---------|--------|--------|------------------------------------------------------|
-| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java)    | 20ms    | 221μs  | 269μs  | [instructions](https://adventofcode.com/2024/day/1)  |
-| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)     | -       | 1ms    | 1ms    | [instructions](https://adventofcode.com/2024/day/2)  |
-| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)          | -       | 606μs  | 394μs  | [instructions](https://adventofcode.com/2024/day/3)  |
-| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)          | -       | 2ms    | 958μs  | [instructions](https://adventofcode.com/2024/day/4)  |
-| 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)           | 5ms     | 2ms    | 2ms    | [instructions](https://adventofcode.com/2024/day/5)  |
-| 2024 | 06  | [Guard Gallivant](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day06.java)       | 1ms     | 6ms    | 6ms    | [instructions](https://adventofcode.com/2024/day/6)  |
-| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)         | -       | 32ms   | 6863ms | [instructions](https://adventofcode.com/2024/day/7)  |
-| 2024 | 08  | [Resonant Collinearity](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day08.java) | 1087μs  | 51μs   | 111μs  | [instructions](https://adventofcode.com/2024/day/8)  |
-| 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)       | -       | 1065μs | 89ms   | [instructions](https://adventofcode.com/2024/day/9)  |
-| 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | -       | 664μs  | 937μs  | [instructions](https://adventofcode.com/2024/day/10) |
-| 2024 | 11  | [Plutonian Pebbles](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day11.java)     | -       | 487μs  | 32ms   | [instructions](https://adventofcode.com/2024/day/11) |
-| 2024 | 12  | [Garden Groups](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day12.java)         | -       | 6ms    | 10ms   | [instructions](https://adventofcode.com/2024/day/12) |
+| Year | Day | Name                                                                                            | Parsing | Part 1 | Part 2  | Assignment                                           |
+|------|-----|-------------------------------------------------------------------------------------------------|---------|--------|---------|------------------------------------------------------|
+| 2024 | 01  | [Historian Hysteria](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day01.java)    | 20ms    | 221μs  | 269μs   | [instructions](https://adventofcode.com/2024/day/1)  |
+| 2024 | 02  | [Red-Nosed Reports](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day02.java)     | -       | 1ms    | 1ms     | [instructions](https://adventofcode.com/2024/day/2)  |
+| 2024 | 03  | [Mull it over](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day03.java)          | -       | 606μs  | 394μs   | [instructions](https://adventofcode.com/2024/day/3)  |
+| 2024 | 04  | [Ceres Search](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day04.java)          | -       | 2ms    | 958μs   | [instructions](https://adventofcode.com/2024/day/4)  |
+| 2024 | 05  | [Print Queue](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day05.java)           | 5ms     | 2ms    | 2ms     | [instructions](https://adventofcode.com/2024/day/5)  |
+| 2024 | 06  | [Guard Gallivant](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day06.java)       | 1119μs  | 27ms   | 10015ms | [instructions](https://adventofcode.com/2024/day/6)  |
+| 2024 | 07  | [Bridge Repair](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day07.java)         | -       | 32ms   | 6863ms  | [instructions](https://adventofcode.com/2024/day/7)  |
+| 2024 | 08  | [Resonant Collinearity](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day08.java) | 1087μs  | 51μs   | 111μs   | [instructions](https://adventofcode.com/2024/day/8)  |
+| 2024 | 09  | [Disk Fragmenter](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day09.java)       | -       | 1065μs | 89ms    | [instructions](https://adventofcode.com/2024/day/9)  |
+| 2024 | 10  | [Hoof it](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day10.java)               | -       | 664μs  | 937μs   | [instructions](https://adventofcode.com/2024/day/10) |
+| 2024 | 11  | [Plutonian Pebbles](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day11.java)     | -       | 487μs  | 32ms    | [instructions](https://adventofcode.com/2024/day/11) |
+| 2024 | 12  | [Garden Groups](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day12.java)         | -       | 6ms    | 10ms    | [instructions](https://adventofcode.com/2024/day/12) |
+| 2024 | 13  | [Claw Contraption](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day13.java)      | 12ms    | 999μs  | 1ms     | [instructions](https://adventofcode.com/2024/day/13) |

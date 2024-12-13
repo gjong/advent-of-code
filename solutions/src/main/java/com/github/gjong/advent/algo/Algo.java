@@ -22,4 +22,17 @@ public class Algo {
             return gcd(b, a % b);
         }
     }
+
+    /**
+     * Calculates the determinant of a 2x2 matrix represented by the values a, b, c, and d.
+     *
+     * @param a the value in the top-left position of the matrix
+     * @param b the value in the top-right position of the matrix
+     * @param c the value in the bottom-left position of the matrix
+     * @param d the value in the bottom-right position of the matrix
+     * @return the determinant of the matrix
+     */
+    public static long determinant(long a, long b, long c, long d) {
+        return (a * b) - (c * d);
+    }
 }
