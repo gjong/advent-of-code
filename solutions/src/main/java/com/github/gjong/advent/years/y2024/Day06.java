@@ -117,6 +117,7 @@ public class Day06 implements DaySolver {
                 }
             }
 
+            executors.shutdown();
             executors.awaitTermination(1, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
