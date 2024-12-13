@@ -4,7 +4,6 @@ import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
-import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +15,6 @@ import static java.lang.Integer.parseInt;
 @Day(year = 2024, day = 13, name = "Claw Contraption")
 public class Day13 implements DaySolver {
 
-    private final Logger log = org.slf4j.LoggerFactory.getLogger(Day13.class);
-
     private final InputLoader inputLoader;
     private final Validator validator;
 
@@ -25,12 +22,16 @@ public class Day13 implements DaySolver {
     }
 
     record WinPoint(long x, long y) {
-        public WinPoint translate(long dx, long dy) {
-            return new WinPoint(x + dx, y + dy);
+        public WinPoint translate(long dx) {
+            return new WinPoint(x + dx, y + dx);
         }
     }
 
     record Machine(WinPoint price, PlayCost buttonA, PlayCost buttonB) {
+
+        Machine makeMoreExpensive() {
+            return new Machine(price.translate(10000000000000L), buttonA, buttonB);
+        }
 
         /**
          * Computes the minimum cost based on the given machine's price and button configurations.
@@ -99,9 +100,8 @@ public class Day13 implements DaySolver {
 
     @Override
     public void part2() {
-        var addedCost = 10000000000000L;
         var totalCost = computeMachines.stream()
-                .map(machine -> new Machine(machine.price().translate(addedCost, addedCost), machine.buttonB, machine.buttonA))
+                .map(Machine::makeMoreExpensive)
                 .mapToLong(Machine::computeMinCost)
                 .sum();
 
