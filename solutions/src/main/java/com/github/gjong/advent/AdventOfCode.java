@@ -32,9 +32,17 @@ public class AdventOfCode {
             runYears = List.of(arguments.year());
         }
 
-        LOGGER.info("Running with {} benchmark runs.", determineNumberOfRuns(arguments));
+        var numberOfRuns = determineNumberOfRuns(arguments);
+        LOGGER.info("Running with {} benchmark runs.", numberOfRuns);
         for (var year : runYears) {
-            var suite = new BenchmarkSuite(determineNumberOfRuns(arguments), year, SolutionProvider.instance().provide(year));
+            List<DaySolver> solverList;
+            if (arguments.day() > -1) {
+                solverList = List.of(SolutionProvider.instance().provide(year, arguments.day()));
+            } else {
+                solverList = SolutionProvider.instance().provide(year);
+            }
+
+            var suite = new BenchmarkSuite(numberOfRuns, year, solverList);
             var results = benchmark(suite);
 
             LOGGER.info("");

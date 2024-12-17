@@ -111,6 +111,10 @@ class TestClassWriter {
                     w.print("}");
                 });
         writer.println(");");
+        writer.println("        if (!beanContext.provide(Validator.class).hasAnswer(\"part%d_%s\")) {".formatted(part, testCase));
+        writer.println("          log.info(\"Test case '%s' part %d has no answer.\");".formatted(testCase, day.day()));
+        writer.println("          return;");
+        writer.println("        }");
         writer.println("        var daySolver = beanContext.provide(%s.class);".formatted(definition.type().getSimpleName()));
         writer.println("        daySolver.readInput();");
         writer.println("        daySolver.part%d();".formatted(part));

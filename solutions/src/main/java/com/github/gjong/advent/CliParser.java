@@ -11,6 +11,7 @@ class CliParser {
     private boolean benchmarkMode = false;
     private int benchMarkRuns = 5;
     private int runYear = -1;
+    private int runDay = -1;
 
     CliParser(String[] args) {
         for (var idx = 0; idx < args.length; ++idx) {
@@ -18,6 +19,7 @@ class CliParser {
                 case "--help":
                     logger.info("Execute using the following options:");
                     logger.info("\t-y <year>\t\tExecute only the provided year.");
+                    logger.info("\t-d <day>\t\tExecute only the provided day, requires year.");
                     logger.info("\t-b \t\t\t\tRun in benchmark mode.");
                     logger.info("\t-r \t\t\t\tNumber of runs in benchmark mode, default 5.");
                     logger.info("\n\nSupported years: {}", SolutionProvider.instance().listYears());
@@ -32,6 +34,8 @@ class CliParser {
                 case "-y":
                     runYear = Integer.parseInt(args[++idx]);
                     break;
+                case "-d":
+                    runDay = Integer.parseInt(args[++idx]);
             }
         }
     }
@@ -42,6 +46,10 @@ class CliParser {
 
     public int year() {
         return runYear;
+    }
+
+    public int day() {
+        return runDay;
     }
 
     public boolean benchmarkMode() {

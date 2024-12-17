@@ -69,7 +69,7 @@ public class Validator {
         return matching;
     }
 
-    protected boolean hasAnswer(String key) {
+    public boolean hasAnswer(String key) {
         return answers.containsKey(key);
     }
 }

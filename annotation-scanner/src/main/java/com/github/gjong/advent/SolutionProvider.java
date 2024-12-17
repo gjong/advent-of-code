@@ -35,8 +35,10 @@ public class SolutionProvider {
 
     public DaySolver provide(int year, int day) {
         return StreamSupport.stream(context.provideAll(DaySolver.class).spliterator(), false)
-                .filter(solver -> solver.getClass().getAnnotation(Day.class).year() == year)
-                .filter(solver -> solver.getClass().getAnnotation(Day.class).day() == day)
+                .filter(solver -> {
+                    var dayAnnotation = solver.getClass().getAnnotation(Day.class);
+                    return dayAnnotation.year() == year && dayAnnotation.day() == day;
+                })
                 .findFirst()
                 .orElseThrow();
     }
