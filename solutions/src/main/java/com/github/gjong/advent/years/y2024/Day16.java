@@ -10,10 +10,10 @@ import com.github.gjong.advent.common.Validator;
 import com.github.gjong.advent.geo.Direction;
 import com.github.gjong.advent.geo.Point;
 import com.github.gjong.advent.geo.Vector;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Day(year = 2024, day = 16, name = "Reindeer Maze")
 public class Day16 implements DaySolver {
