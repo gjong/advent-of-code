@@ -24,14 +24,6 @@ public record Vector(Point start, Point end) {
         return points;
     }
 
-    public boolean extendsTo(Point point) {
-        var direction = direction();
-
-        if (start.translate(direction.inverse()).equals(point)) {
-            return true;
-        } else return end.translate(direction).equals(point);
-    }
-
     public Point intersectY(int y) {
         var dy = y - start.y();
         var dx = (end.x() - start.x()) / (end.y() - start.y());
@@ -64,9 +56,26 @@ public record Vector(Point start, Point end) {
         return start.x() == end.x() && start.y() != end.y();
     }
 
-    public Point direction() {
+    public Direction direction() {
         return new Point(
                 (int) Math.signum(end.x() - start.x()),
                 (int) Math.signum(end.y() - start.y()));
+    }
+
+    public static Direction direction(Point start, Point end) {
+        var x = (int) Math.signum(end.x() - start.x());
+        var y = (int) Math.signum(end.y() - start.y());
+
+        if (x == 0 && y == 1) {
+            return Point.north;
+        } else if (x == 0 && y == -1) {
+            return Point.south;
+        } else if (x == 1 && y == 0) {
+            return Point.east;
+        } else if (x == -1 && y == 0) {
+            return Point.west;
+        } else {
+            throw new IllegalArgumentException("Invalid vector: " + start + " -> " + end);
+        }
     }
 }

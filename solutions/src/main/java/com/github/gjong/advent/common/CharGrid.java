@@ -16,6 +16,11 @@ public class CharGrid {
 
     public CharGrid(int rows, int cols) {
         this.grid = new char[rows][cols];
+        for (var y = 0; y < rows; y++) {
+            for (var x = 0; x < cols; x++) {
+                grid[y][x] = '.';
+            }
+        }
     }
 
     public CharGrid(String input) {
@@ -34,6 +39,10 @@ public class CharGrid {
 
     public void set(int x, int y, char c) {
         grid[y][x] = c;
+    }
+
+    public void set(Point p, char c) {
+        set(p.x(), p.y(), c);
     }
 
     public char at(int x, int y) {

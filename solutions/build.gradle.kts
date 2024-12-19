@@ -19,7 +19,7 @@ dependencies {
     implementation(aoc.lang)
     implementation(project(":annotation-scanner"))
 
-    runtimeOnly(aoc.logback)
+    implementation(aoc.logback)
 
     testImplementation(aoc.junit)
 }

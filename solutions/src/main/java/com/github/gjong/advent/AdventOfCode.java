@@ -1,6 +1,8 @@
 package com.github.gjong.advent;
 
+import ch.qos.logback.classic.Level;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -30,6 +32,12 @@ public class AdventOfCode {
         var runYears = List.copyOf(supportedYears);
         if (arguments.year() > -1) {
             runYears = List.of(arguments.year());
+        }
+
+        if (arguments.debugLogging()) {
+            ((ch.qos.logback.classic.Logger) LoggerFactory.getILoggerFactory()
+                    .getLogger("com.github.gjong.advent"))
+                    .setLevel(Level.DEBUG);
         }
 
         var numberOfRuns = determineNumberOfRuns(arguments);

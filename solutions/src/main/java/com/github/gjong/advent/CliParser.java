@@ -9,6 +9,7 @@ class CliParser {
 
     private boolean shouldRun = true;
     private boolean benchmarkMode = false;
+    private boolean debugLogging = false;
     private int benchMarkRuns = 5;
     private int runYear = -1;
     private int runDay = -1;
@@ -22,6 +23,7 @@ class CliParser {
                     logger.info("\t-d <day>\t\tExecute only the provided day, requires year.");
                     logger.info("\t-b \t\t\t\tRun in benchmark mode.");
                     logger.info("\t-r \t\t\t\tNumber of runs in benchmark mode, default 5.");
+                    logger.info("\t-x \t\t\t\tEnable debug logging.");
                     logger.info("\n\nSupported years: {}", SolutionProvider.instance().listYears());
                     shouldRun = false;
                     break;
@@ -36,12 +38,20 @@ class CliParser {
                     break;
                 case "-d":
                     runDay = Integer.parseInt(args[++idx]);
+                    break;
+                case "-x":
+                    debugLogging = true;
+                    break;
             }
         }
     }
 
     public boolean shouldRun() {
         return shouldRun;
+    }
+
+    public boolean debugLogging() {
+        return debugLogging;
     }
 
     public int year() {
