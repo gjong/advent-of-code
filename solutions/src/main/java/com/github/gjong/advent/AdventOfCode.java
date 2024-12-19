@@ -106,11 +106,12 @@ public class AdventOfCode {
 
             var part1Total = 0L;
             var part2Total = 0L;
+            var totalPrepareTime = 0L;
             var part1Limit = limitedRunConfig(solver, 1);
             var part2Limit = limitedRunConfig(solver, 2);
 
-            var prepareTime = measure(solver::readInput);
             for (var run = 0; run < suite.runs; run++) {
+                totalPrepareTime += measure(solver::readInput);
                 if (run < part1Limit) part1Total += measure(solver::part1);
                 if (run < part2Limit) part2Total += measure(solver::part2);
             }
@@ -120,7 +121,7 @@ public class AdventOfCode {
                     day.day(),
                     new BigDecimal(part1Total).divide(new BigDecimal(Math.min(suite.runs, part1Limit)), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
                     new BigDecimal(part2Total).divide(new BigDecimal(Math.min(suite.runs, part2Limit)), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
-                    (int) prepareTime,
+                    new BigDecimal(totalPrepareTime).divide(new BigDecimal(suite.runs), RoundingMode.CEILING).round(new MathContext(0, RoundingMode.CEILING)).intValue(),
                     day.name(),
                     solver.getClass().getSimpleName()));
         }

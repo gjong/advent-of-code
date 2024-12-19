@@ -12,7 +12,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
-import java.util.stream.Stream;
 
 @Day(year = 2024, day = 7, name = "Bridge Repair")
 public class Day07 implements DaySolver {

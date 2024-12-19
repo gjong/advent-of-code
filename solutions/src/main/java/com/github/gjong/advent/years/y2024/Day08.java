@@ -26,6 +26,8 @@ public class Day08 implements DaySolver {
 
     @Override
     public void readInput() {
+        parsedGrid.clear();
+
         var grid = inputLoader.charGrid();
         for (int y = 0; y < grid.rows(); y++) {
             for (int x = 0; x < grid.cols(); x++) {

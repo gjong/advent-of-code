@@ -13,7 +13,6 @@ import com.github.gjong.advent.geo.Vector;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Day(year = 2024, day = 16, name = "Reindeer Maze")
 public class Day16 implements DaySolver {
@@ -69,25 +68,22 @@ public class Day16 implements DaySolver {
         }
 
         @Override
-        public Map<Step, Long> neighbours() {
-            var neighbours = new HashMap<Step, Long>();
-
-            location.neighbours()
+        public List<NeighbourWithCost<Step>> neighbours() {
+            return location.neighbours()
                     .stream()
                     .filter(point -> grid.at(point) != '#')
-                    .forEach(step -> {
+                    .map(step -> {
                         var direction = Vector.direction(location, step);
                         var cost = direction.equals(this.direction) ? 1L : 1001L;
                         if (!cache.containsKey(new StepDirection(step, direction))) {
                             var nextStep = new Step(step, direction, cache);
                             cache.put(new StepDirection(step, direction), nextStep);
-                            neighbours.put(nextStep, cost);
-                        } else {
-                            neighbours.put(cache.get(new StepDirection(step, direction)), cost);
+                            return new NeighbourWithCost<>(nextStep, cost);
                         }
-                    });
 
-            return neighbours;
+                        return new NeighbourWithCost<>(cache.get(new StepDirection(step, direction)), cost);
+                    })
+                    .toList();
         }
     }
 }

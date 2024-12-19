@@ -22,12 +22,12 @@ public class PathFinding {
             }
 
             visit.visit();
-            for (var neighbour : visit.neighbours().entrySet()) {
-                var updatedCost = visit.cost() + neighbour.getValue();
+            for (var neighbour : visit.neighbours()) {
+                var updatedCost = visit.cost() + neighbour.cost();
 
-                if (neighbour.getKey().cost() > updatedCost) {
-                    neighbour.getKey().setCost(updatedCost);
-                    toVisit.add(neighbour.getKey());
+                if (neighbour.node().cost() > updatedCost) {
+                    neighbour.node().setCost(updatedCost);
+                    toVisit.add(neighbour.node());
                 }
             }
         }

@@ -2,6 +2,7 @@ package com.github.gjong.advent.years.y2024;
 
 import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
+import com.github.gjong.advent.LimitRuns;
 import com.github.gjong.advent.algo.Node;
 import com.github.gjong.advent.algo.PathFinding;
 import com.github.gjong.advent.common.CharGrid;
@@ -49,9 +50,7 @@ public class Day18 implements DaySolver {
         var end = Point.of(grid.cols() - 1, grid.rows() - 1);
 
         start.setCost(0L);
-        var cheapestRoute = PathFinding.dijkstra(List.of(start),
-                step -> step.location.equals(end));
-
+        var cheapestRoute = PathFinding.dijkstra(List.of(start), step -> step.location.equals(end));
         if (cheapestRoute.isEmpty()) {
             throw new IllegalStateException("No path found.");
         }
@@ -59,6 +58,7 @@ public class Day18 implements DaySolver {
         validator.part1(cheapestRoute.get().cost());
     }
 
+    @LimitRuns
     @Override
     public void part2() {
         var start = new HistorianStep(Point.zero, new HashMap<>());
@@ -71,10 +71,7 @@ public class Day18 implements DaySolver {
 
         Point lastBlockAdded = null;
         start.setCost(0L);
-        while (PathFinding.dijkstra(List.of(start),
-                step -> step.location.equals(end))
-                .isPresent()) {
-
+        while (PathFinding.dijkstra(List.of(start), step -> step.location.equals(end)).isPresent()) {
             lastBlockAdded = allBlocks.removeFirst();
             grid.set(lastBlockAdded, '#');
 
@@ -95,14 +92,13 @@ public class Day18 implements DaySolver {
         }
 
         @Override
-        public Map<HistorianStep, Long> neighbours() {
-            var neighbours = new HashMap<HistorianStep, Long>();
-            location.neighbours()
+        public List<NeighbourWithCost<HistorianStep>> neighbours() {
+            return location.neighbours()
                     .stream()
                     .filter(point -> grid.at(point) == '.')
                     .map(point -> cache.computeIfAbsent(point, key -> new HistorianStep(key, cache)))
-                    .forEach(step -> neighbours.put(step, 1L));
-            return neighbours;
+                    .map(step -> new NeighbourWithCost<>(step, 1L))
+                    .toList();
         }
     }
 

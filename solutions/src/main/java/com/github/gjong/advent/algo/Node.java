@@ -1,8 +1,11 @@
 package com.github.gjong.advent.algo;
 
-import java.util.Map;
+import java.util.List;
 
 public abstract class Node<T extends Node<T>> implements Comparable<T> {
+
+    public record NeighbourWithCost<T>(T node, long cost) {}
+
     private long cost;
     private boolean visited;
 
@@ -27,7 +30,7 @@ public abstract class Node<T extends Node<T>> implements Comparable<T> {
         this.cost = cost;
     }
 
-    public abstract Map<T, Long> neighbours();
+    public abstract List<NeighbourWithCost<T>> neighbours();
 
     @Override
     public int compareTo(T o) {

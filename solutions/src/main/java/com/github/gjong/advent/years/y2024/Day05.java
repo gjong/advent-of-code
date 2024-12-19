@@ -41,6 +41,9 @@ public class Day05 implements DaySolver {
 
     @Override
     public void readInput() {
+        priorityMap.clear();
+        printOrders.clear();
+
         inputLoader.consumeLine(line -> {
             if (line.contains(",")) {
                 printOrders.add(List.of(line.split(",")));
