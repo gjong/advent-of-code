@@ -13,6 +13,7 @@ class CliParser {
     private int benchMarkRuns = 5;
     private int runYear = -1;
     private int runDay = -1;
+    private String reportFormat = "logger";
 
     CliParser(String[] args) {
         for (var idx = 0; idx < args.length; ++idx) {
@@ -23,6 +24,7 @@ class CliParser {
                     logger.info("\t-d <day>\t\tExecute only the provided day, requires year.");
                     logger.info("\t-b \t\t\t\tRun in benchmark mode.");
                     logger.info("\t-r \t\t\t\tNumber of runs in benchmark mode, default 5.");
+                    logger.info("\t-o \t\t\t\tOutput formatter, default logger.");
                     logger.info("\t-x \t\t\t\tEnable debug logging.");
                     logger.info("\n\nSupported years: {}", SolutionProvider.instance().listYears());
                     shouldRun = false;
@@ -42,8 +44,15 @@ class CliParser {
                 case "-x":
                     debugLogging = true;
                     break;
+                case "-o":
+                    reportFormat = args[++idx];
+                    break;
             }
         }
+    }
+
+    public String getReportFormat() {
+        return reportFormat;
     }
 
     public boolean shouldRun() {

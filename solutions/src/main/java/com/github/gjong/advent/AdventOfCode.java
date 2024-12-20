@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AdventOfCode {
 
-    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(AdventOfCode.class);
+    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger("AdventOfCode");
 
     public static void main(String[] args) {
         var arguments = new CliParser(args);
@@ -33,7 +33,7 @@ public class AdventOfCode {
         }
 
         var numberOfRuns = determineNumberOfRuns(arguments);
-        var reportWriter = ReportWriterFactory.create("");
+        var reportWriter = ReportWriterFactory.create(arguments.getReportFormat());
         LOGGER.info("Running with {} benchmark runs.", numberOfRuns);
 
         for (var year : runYears) {

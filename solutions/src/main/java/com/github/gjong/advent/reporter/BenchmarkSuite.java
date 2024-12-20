@@ -2,6 +2,8 @@ package com.github.gjong.advent.reporter;
 
 import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.LimitRuns;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -10,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class BenchmarkSuite {
+    private final Logger log = LoggerFactory.getLogger("AdventOfCode");
     private final int runs;
     private final int year;
     private final List<DaySolver> days;
@@ -24,7 +27,9 @@ public class BenchmarkSuite {
 
     public void execute() {
         dayResults.clear();
+        log.info("Starting benchmark for year {}.", year);
         for (DaySolver solver : days) {
+            log.info("Executing benchmark for {}.", solver.getClass().getSimpleName());
             var part1Total = 0L;
             var part2Total = 0L;
             var totalPrepareTime = 0L;
@@ -43,6 +48,7 @@ public class BenchmarkSuite {
                     new BenchmarkResult.Measurement(part2Total, part2Limit),
                     new BenchmarkResult.Measurement(totalPrepareTime, runs)));
         }
+        log.info("Benchmark complete for year {}.", year);
     }
 
     public List<BenchmarkResult> getResults() {

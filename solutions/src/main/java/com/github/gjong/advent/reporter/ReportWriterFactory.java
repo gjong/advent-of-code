@@ -5,6 +5,7 @@ public class ReportWriterFactory {
 
     public static ReportWriter create(String format) {
         return switch (format) {
+            case "json" -> new JsonReporter();
             default -> new MarkdownReporter();
         };
     }

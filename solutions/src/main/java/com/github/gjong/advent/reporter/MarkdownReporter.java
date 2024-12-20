@@ -30,14 +30,13 @@ class MarkdownReporter implements ReportWriter {
             sb.append(LINE_TEMPLATE.formatted(
                     suite.getYear(),
                     dayResult.day(),
-                    "[%s](solutions/src/main/java/com/github/gjong/advent/years/y%d/%s.java)".formatted(
+                    "[%s](%s)".formatted(
                             dayResult.name(),
-                            suite.getYear(),
-                            dayResult.daySolver().getClass().getSimpleName()),
+                            dayResult.codeUri()),
                     dayResult.prepareTime(),
                     dayResult.part1Time(),
                     dayResult.part2Time(),
-                    "[instructions](https://adventofcode.com/%d/day/%d)".formatted(suite.getYear(), dayResult.day())
+                    "[instructions](%s)".formatted(dayResult.instructionUri())
             ));
         }
     }

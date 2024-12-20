@@ -10,6 +10,17 @@ public record BenchmarkResult(DaySolver daySolver, Measurement part1, Measuremen
         }
     }
 
+    public String instructionUri() {
+        var day = daySolver.getClass().getAnnotation(Day.class);
+        return "https://adventofcode.com/%d/day/%d".formatted(day.year(), day.day());
+    }
+
+    public String codeUri() {
+        var srcLocation = daySolver.getClass().getName().replace('.', '/');
+        return "solutions/src/main/java/%s.java"
+                .formatted(srcLocation);
+    }
+
     public int day() {
         return daySolver.getClass().getAnnotation(Day.class).day();
     }
