@@ -26,24 +26,15 @@ public class Day20 implements DaySolver {
 
     @Override
     public void part1() {
-        var grid = prepareGrid();
-        resetWalls(grid);
-
-        var cheats = 0;
-        var pathPositions = grid.find(GridPlace::isNotWall);
-        for (var position : pathPositions) {
-            cheats += position.neighbours()
-                    .stream()
-                    .filter(neighbour -> !grid.at(neighbour).isNotWall())
-                    .mapToInt(wall -> countGoodCheat(grid, wall, position))
-                    .sum();
-        }
-
-        validator.part1(cheats);
+        validator.part1(countCheatsWithMaxSteps(2));
     }
 
     @Override
     public void part2() {
+        validator.part2(countCheatsWithMaxSteps(20));
+    }
+
+    private int countCheatsWithMaxSteps(int steps) {
         var grid = prepareGrid();
         resetWalls(grid);
 
@@ -52,18 +43,15 @@ public class Day20 implements DaySolver {
         for (var cheatStart : pathPositions) {
             for (var cheatEnd : pathPositions) {
                 var stepDistance = Vector.stepsInVector(cheatEnd, cheatStart);
-                if (stepDistance <= 20) {
-                    // compute gained distance
-                    var pointDistance = grid.at(cheatEnd).distance - grid.at(cheatStart).distance;
-                    var cheatDistance = pointDistance - stepDistance;
+                if (stepDistance <= steps) {
+                    var cheatDistance = grid.at(cheatEnd).distance - grid.at(cheatStart).distance - stepDistance;
                     if (cheatDistance >= 100) {
                         cheats++;
                     }
                 }
             }
         }
-
-        validator.part2(cheats);
+        return cheats;
     }
 
     /**
@@ -77,27 +65,6 @@ public class Day20 implements DaySolver {
                 .stream()
                 .map(grid::at)
                 .forEach(gridPlace -> gridPlace.distance = -1);
-    }
-
-    /**
-     * Counts the number of good cheats based on the given grid, wall position, and cheat starting position.
-     *
-     * @param grid the grid containing the grid places to analyze
-     * @param wall the position of the wall to check for neighboring cheats
-     * @param cheatStart the position of the cheat starting point
-     * @return the number of good cheats found around the wall position
-     */
-    private int countGoodCheat(Grid<GridPlace> grid, Point wall, Point cheatStart) {
-        var cheats = 0;
-        for (var cheatPos : wall.neighbours()) {
-            if (grid.inBounds(cheatPos)) {
-                var potentialGain = grid.at(cheatPos).distance - grid.at(cheatStart).distance;
-                if (potentialGain > 100) {
-                    cheats++;
-                }
-            }
-        }
-        return cheats;
     }
 
     /**
