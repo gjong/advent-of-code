@@ -11,7 +11,6 @@ public abstract class Node<T extends Node<T>> implements Comparable<T> {
 
     protected Node() {
         cost = Long.MAX_VALUE;
-
     }
 
     public long cost() {

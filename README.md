@@ -106,27 +106,27 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 
 ### 2021 - solutions
 
-| Year | Day | Name                                                                                              | Part 1 | Part 2 | Assignment                                           |
-|------|-----|---------------------------------------------------------------------------------------------------|--------|--------|------------------------------------------------------|
-| 2021 | 01  | [Sonar Sweep](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day01.java)             | 14ms   | 14ms   | [instructions](https://adventofcode.com/2021/day/1)  |
-| 2021 | 02  | [Dive!](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day02.java)                   | 6ms    | 1ms    | [instructions](https://adventofcode.com/2021/day/2)  |
-| 2021 | 03  | [Binary Diagnostic](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day03.java)       | 2ms    | 8ms    | [instructions](https://adventofcode.com/2021/day/3)  |
-| 2021 | 04  | [Giant Squid](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day04.java)             | 23ms   | 20ms   | [instructions](https://adventofcode.com/2021/day/4)  |
-| 2021 | 05  | [Hydrothermal Venture](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day05.java)    | 71ms   | 22ms   | [instructions](https://adventofcode.com/2021/day/5)  |
-| 2021 | 06  | [Lanternfish](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day06.java)             | 1ms    | 0ms    | [instructions](https://adventofcode.com/2021/day/6)  |
-| 2021 | 07  | [The Treachery of Whales](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day07.java) | 3ms    | 8ms    | [instructions](https://adventofcode.com/2021/day/7)  |
-| 2021 | 08  | [...](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day08.java)                     | 18ms   | 10ms   | [instructions](https://adventofcode.com/2021/day/8)  |
-| 2021 | 09  | [Smoke Basin](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day09.java)             | 1ms    | 3ms    | [instructions](https://adventofcode.com/2021/day/9)  |
-| 2021 | 10  | [Syntax Scoring](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day10.java)          | 6ms    | 3ms    | [instructions](https://adventofcode.com/2021/day/10) |
-| 2021 | 11  | [Dumbo Octopus](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day11.java)           | 2ms    | 0ms    | [instructions](https://adventofcode.com/2021/day/11) |
-| 2021 | 12  | [Passage Pathing](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day12.java)         | 24ms   | 717ms  | [instructions](https://adventofcode.com/2021/day/12) |
-| 2021 | 13  | [Transparent Origami](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day13.java)     | 16ms   | 18ms   | [instructions](https://adventofcode.com/2021/day/13) |
-| 2022 | 14  | [Regolith Reservoir](solutions/src/main/java/com/github/gjong/advent/years/y2022/Day14.java)      | 7ms    | 94ms   | [instructions](https://adventofcode.com/2022/day/14) |
-| 2021 | 15  | [Chiton](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day15.java)                  | 16ms   | 297ms  | [instructions](https://adventofcode.com/2021/day/15) |
-| 2021 | 16  | [Packet Decoder](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day16.java)          | 11ms   | 5ms    | [instructions](https://adventofcode.com/2021/day/16) |
-| 2021 | 17  | [Trick Shot](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day17.java)              | 20ms   | 18ms   | [instructions](https://adventofcode.com/2021/day/17) |
-| 2021 | 18  | [Snailfish](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day18.java)               | 10ms   | 128ms  | [instructions](https://adventofcode.com/2021/day/18) |
-| 2021 | 21  | [Dirac Dice](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day21.java)              | 2ms    | 9664ms | [instructions](https://adventofcode.com/2021/day/21) |
+| Year | Day | Name                                                                                              | Parsing | Part 1 | Part 2  | Assignment                                           |
+|------|-----|---------------------------------------------------------------------------------------------------|---------|--------|---------|------------------------------------------------------|
+| 2021 | 01  | [Sonar Sweep](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day01.java)             | -       | 828μs  | 946μs   | [instructions](https://adventofcode.com/2021/day/1)  |
+| 2021 | 02  | [Dive!](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day02.java)                   | -       | 1010μs | 653μs   | [instructions](https://adventofcode.com/2021/day/2)  |
+| 2021 | 03  | [Binary Diagnostic](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day03.java)       | -       | 484μs  | 859μs   | [instructions](https://adventofcode.com/2021/day/3)  |
+| 2021 | 04  | [Giant Squid](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day04.java)             | -       | 2ms    | 3ms     | [instructions](https://adventofcode.com/2021/day/4)  |
+| 2021 | 05  | [Hydrothermal Venture](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day05.java)    | 11μs    | 13ms   | 3ms     | [instructions](https://adventofcode.com/2021/day/5)  |
+| 2021 | 06  | [Lanternfish](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day06.java)             | -       | 162μs  | 190μs   | [instructions](https://adventofcode.com/2021/day/6)  |
+| 2021 | 07  | [The Treachery of Whales](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day07.java) | -       | 932μs  | 849μs   | [instructions](https://adventofcode.com/2021/day/7)  |
+| 2021 | 08  | [](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day08.java)                        | -       | 2ms    | 2ms     | [instructions](https://adventofcode.com/2021/day/8)  |
+| 2021 | 09  | [Smoke Basin](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day09.java)             | -       | 342μs  | 699μs   | [instructions](https://adventofcode.com/2021/day/9)  |
+| 2021 | 10  | [Syntax Scoring](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day10.java)          | -       | 482μs  | 524μs   | [instructions](https://adventofcode.com/2021/day/10) |
+| 2021 | 11  | [Dumbo Octopus](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day11.java)           | -       | 354μs  | 353μs   | [instructions](https://adventofcode.com/2021/day/11) |
+| 2021 | 12  | [Passage Pathing](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day12.java)         | -       | 5ms    | 540ms   | [instructions](https://adventofcode.com/2021/day/12) |
+| 2021 | 13  | [Transparent Origami](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day13.java)     | -       | 4ms    | 5ms     | [instructions](https://adventofcode.com/2021/day/13) |
+| 2021 | 14  | [Extended Polymerization](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day14.java) | -       | 7ms    | 1194μs  | [instructions](https://adventofcode.com/2021/day/14) |
+| 2021 | 15  | [Chiton](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day15.java)                  | -       | 2ms    | 279ms   | [instructions](https://adventofcode.com/2021/day/15) |
+| 2021 | 16  | [Packet Decoder](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day16.java)          | -       | 1ms    | 1ms     | [instructions](https://adventofcode.com/2021/day/16) |
+| 2021 | 17  | [Trick Shot](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day17.java)              | 10μs    | 5ms    | 5ms     | [instructions](https://adventofcode.com/2021/day/17) |
+| 2021 | 18  | [Snailfish](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day18.java)               | -       | 2ms    | 81ms    | [instructions](https://adventofcode.com/2021/day/18) |
+| 2021 | 21  | [Dirac Dice](solutions/src/main/java/com/github/gjong/advent/years/y2021/Day21.java)              | -       | 241μs  | 11560ms | [instructions](https://adventofcode.com/2021/day/21) |
 
 ### 2022 - solutions
 

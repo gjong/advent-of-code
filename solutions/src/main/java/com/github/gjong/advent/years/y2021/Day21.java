@@ -2,6 +2,7 @@ package com.github.gjong.advent.years.y2021;
 
 import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
+import com.github.gjong.advent.LimitRuns;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 
@@ -65,6 +66,7 @@ public class Day21 implements DaySolver {
     }
 
     @Override
+    @LimitRuns
     public void part2() {
         var lines = inputLoader.splitOnNewLine().toList();
         var pawn1Position = parseInt(lines.getFirst().substring(28));
