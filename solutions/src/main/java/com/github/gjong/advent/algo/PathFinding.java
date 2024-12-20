@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public class PathFinding {
 
     public static <T extends Node<T>> Optional<T> dijkstra(List<T> start,
-                                                           Predicate<T> desiredPoint) {
+                                                   Predicate<T> desiredPoint) {
         var toVisit = new PriorityQueue<T>();
 
         toVisit.addAll(start);
@@ -26,6 +26,7 @@ public class PathFinding {
                 var updatedCost = visit.cost() + neighbour.cost();
 
                 if (neighbour.node().cost() > updatedCost) {
+                    neighbour.node().setOrigin(visit);
                     neighbour.node().setCost(updatedCost);
                     toVisit.add(neighbour.node());
                 }

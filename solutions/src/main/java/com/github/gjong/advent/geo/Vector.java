@@ -62,6 +62,10 @@ public record Vector(Point start, Point end) {
                 (int) Math.signum(end.y() - start.y()));
     }
 
+    public static int stepsInVector(Point start, Point end) {
+        return Math.abs(end.x() - start.x()) + Math.abs(end.y() - start.y());
+    }
+
     public static Direction direction(Point start, Point end) {
         var x = (int) Math.signum(end.x() - start.x());
         var y = (int) Math.signum(end.y() - start.y());

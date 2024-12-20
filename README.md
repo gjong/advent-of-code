@@ -190,3 +190,4 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2024 | 17  | [Chronospatial Computer](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day17.java) | 1000μs  | 110μs  | 1ms     | [instructions](https://adventofcode.com/2024/day/17) |
 | 2024 | 18  | [RAM Run](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day18.java)                | 4ms     | 43ms   | 2189ms  | [instructions](https://adventofcode.com/2024/day/18) |
 | 2024 | 19  | [Linen Layout](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day19.java)           | -       | 11ms   | 56ms    | [instructions](https://adventofcode.com/2024/day/19) |
+| 2024 | 20  | [Race Condition](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day20.java)         | -       | 71ms   | 336ms   | [instructions](https://adventofcode.com/2024/day/20) |

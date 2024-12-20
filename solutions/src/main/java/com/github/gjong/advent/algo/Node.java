@@ -8,6 +8,7 @@ public abstract class Node<T extends Node<T>> implements Comparable<T> {
 
     private long cost;
     private boolean visited;
+    private T origin;
 
     protected Node() {
         cost = Long.MAX_VALUE;
@@ -27,6 +28,10 @@ public abstract class Node<T extends Node<T>> implements Comparable<T> {
 
     public void setCost(long cost) {
         this.cost = cost;
+    }
+
+    public void setOrigin(T origin) {
+        this.origin = origin;
     }
 
     public abstract List<NeighbourWithCost<T>> neighbours();
