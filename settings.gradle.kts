@@ -12,6 +12,7 @@ dependencyResolutionManagement {
             library("logback", "ch.qos.logback:logback-classic:1.5.22")
 
             library("junit", "org.junit.jupiter:junit-jupiter:6.0.1")
+            library("junit-platform", "org.junit.platform:junit-platform-launcher:6.0.1")
         }
     }
 }

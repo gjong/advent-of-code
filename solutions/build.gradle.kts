@@ -22,4 +22,5 @@ dependencies {
     implementation(aoc.logback)
 
     testImplementation(aoc.junit)
+    testRuntimeOnly(aoc.junit.platform)
 }
