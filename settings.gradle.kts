@@ -18,4 +18,3 @@ dependencyResolutionManagement {
 
 include ("annotation-scanner")
 include ("solutions")
-include ("blog-generator")
