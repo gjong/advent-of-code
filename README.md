@@ -191,3 +191,10 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 | 2024 | 18  | [RAM Run](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day18.java)                | 4ms     | 43ms   | 2189ms  | [instructions](https://adventofcode.com/2024/day/18) |
 | 2024 | 19  | [Linen Layout](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day19.java)           | -       | 11ms   | 56ms    | [instructions](https://adventofcode.com/2024/day/19) |
 | 2024 | 20  | [Race Condition](solutions/src/main/java/com/github/gjong/advent/years/y2024/Day20.java)         | -       | 71ms   | 336ms   | [instructions](https://adventofcode.com/2024/day/20) |
+
+### 2025 - solutions
+
+| Year  | Day  | Name                                | Parsing | Part 1  | Part 2  | Assignment                          |
+|------|-----|--------------------------------------------------------------------------------------------------|---------|--------|---------|------------------------------------------------------|
+|  2025 |  01  | [Secret Entrance](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day01.java) | 604μs   | 185μs   | 149μs   | [instructions](https://adventofcode.com/2025/day/1) |
+|  2025 |  02  | [Gift Shop](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day02.java) | 394μs   | 396μs   | 1ms     | [instructions](https://adventofcode.com/2025/day/2) |

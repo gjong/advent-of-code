@@ -23,6 +23,43 @@ public class Algo {
         }
     }
 
+    public static long floorDivPositive(long a, long b) {
+        // assumes a >= 0 and b > 0
+        return a / b;
+    }
+
+    public static long ceilDivPositive(long a, long b) {
+        // assumes a >= 0 and b > 0
+        return (a + b - 1L) / b;
+    }
+
+    /**
+     * Möbius function mu(n) for n <= 18-ish (we only need up to 18).
+     * Returns:
+     *  1  if n is square-free with even number of primes,
+     * -1  if n is square-free with odd number of primes,
+     *  0  if n has a squared prime factor.
+     */
+    public static int mobius(int n) {
+        int numPrimeFactors = 0;
+        int x = n;
+
+        for (int p = 2; p * p <= x; p++) {
+            if (x % p != 0) continue;
+
+            int count = 0;
+            while (x % p == 0) {
+                x /= p;
+                count++;
+                if (count > 1) return 0; // squared prime factor
+            }
+            numPrimeFactors++;
+        }
+        if (x > 1) numPrimeFactors++;
+
+        return (numPrimeFactors % 2 == 0) ? 1 : -1;
+    }
+
     /**
      * Calculates the determinant of a 2x2 matrix represented by the values a, b, c, and d.
      *
