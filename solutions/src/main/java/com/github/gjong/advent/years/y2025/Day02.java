@@ -9,6 +9,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 import static com.github.gjong.advent.algo.Algo.*;
 import static java.lang.Math.ceilDiv;
@@ -54,6 +55,7 @@ public class Day02 implements DaySolver {
 
     @Override
     public void readInput() {
+        ranges.clear();
         for (String range : inputLoader.split(",")) {
             String[] bounds = range.trim().split("-");
             ranges.add(new Range(Long.parseLong(bounds[0]), Long.parseLong(bounds[1])));
