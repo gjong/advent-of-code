@@ -50,7 +50,6 @@ advent-of-code/
 │   │                           │   |   └── ...
 │   │                           │   └── ...
 │   │                           ├── common/
-│   │                           │   └── CharGrid.java
 │   │                           │   └── InputLoader.java
 │   │                           │   └── Validator.java
 │   │                           ├── algo/
@@ -59,6 +58,10 @@ advent-of-code/
 │   │                           |   └── Bounds.java
 │   │                           |   └── Point.java
 │   │                           |   └── Vector.java
+│   │                           ├── grid/
+│   │                           │   └── CharGrid.java
+│   │                           │   └── Grid.java
+│   │                           │   └── VirtualGrid.java
 │   │                           └── AdventOfCode.java
 │   └── gradle.build.kts
 ├── README.md
@@ -199,3 +202,4 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 |  2025 |  01  | [Secret Entrance](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day01.java) | 604μs   | 185μs   | 149μs   | [instructions](https://adventofcode.com/2025/day/1) |
 |  2025 |  02  | [Gift Shop](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day02.java) | 394μs   | 396μs   | 1ms     | [instructions](https://adventofcode.com/2025/day/2) |
 |  2025 |  03  | [Lobby](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day03.java) | -       | 1055μs  | 2ms     | [instructions](https://adventofcode.com/2025/day/3) |
+|  2025 |  04  | [Printing Department](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day04.java) | 411μs   | 633μs   | 14ms    | [instructions](https://adventofcode.com/2025/day/4) |

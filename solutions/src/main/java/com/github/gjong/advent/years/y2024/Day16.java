@@ -4,7 +4,7 @@ import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
 import com.github.gjong.advent.algo.Node;
 import com.github.gjong.advent.algo.PathFinding;
-import com.github.gjong.advent.common.CharGrid;
+import com.github.gjong.advent.grid.CharGrid;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 import com.github.gjong.advent.geo.Direction;

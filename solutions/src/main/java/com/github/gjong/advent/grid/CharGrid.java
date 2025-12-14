@@ -1,4 +1,4 @@
-package com.github.gjong.advent.common;
+package com.github.gjong.advent.grid;
 
 import com.github.gjong.advent.geo.Point;
 import com.github.gjong.advent.geo.Bounds;
@@ -6,7 +6,7 @@ import com.github.gjong.advent.geo.Bounds;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CharGrid {
+public class CharGrid implements Grid<Character> {
 
     private final char[][] grid;
 
@@ -45,14 +45,14 @@ public class CharGrid {
         set(p.x(), p.y(), c);
     }
 
-    public char at(int x, int y) {
+    public Character at(int x, int y) {
         if (x < 0 || x >= cols() || y < 0 || y >= rows()) {
             return ' ';
         }
         return grid[y][x];
     }
 
-    public char at(Point p) {
+    public Character at(Point p) {
         return at(p.x(), p.y());
     }
 

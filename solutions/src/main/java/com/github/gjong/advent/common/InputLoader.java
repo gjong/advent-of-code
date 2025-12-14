@@ -1,5 +1,7 @@
 package com.github.gjong.advent.common;
 
+import com.github.gjong.advent.grid.CharGrid;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
