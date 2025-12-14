@@ -204,3 +204,4 @@ The measurements are taken on an AMD Ryzen 5 3600X CPU with 64GB of RAM.
 |  2025 |  03  | [Lobby](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day03.java) | -       | 1055μs  | 2ms     | [instructions](https://adventofcode.com/2025/day/3) |
 |  2025 |  04  | [Printing Department](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day04.java) | 411μs   | 633μs   | 14ms    | [instructions](https://adventofcode.com/2025/day/4) |
 |  2025 |  05  | [Cafeteria](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day05.java) | 2ms     | 688μs   | 30μs    | [instructions](https://adventofcode.com/2025/day/5) |
+|  2025 |  06  | [Trash Compactor](solutions/src/main/java/com/github/gjong/advent/years/y2025/Day06.java) | 1ms     | 520μs   | 677μs   | [instructions](https://adventofcode.com/2025/day/6) |
