@@ -2,6 +2,7 @@ package com.github.gjong.advent.years.y2023;
 
 import com.github.gjong.advent.Day;
 import com.github.gjong.advent.DaySolver;
+import com.github.gjong.advent.common.Control;
 import com.github.gjong.advent.common.InputLoader;
 import com.github.gjong.advent.common.Validator;
 
@@ -69,15 +70,15 @@ public class Day01 implements DaySolver {
         map.put("eight", "8");
         map.put("nine", "9");
 
-        var firstNumber = Optional.<String>empty();
+        var firstNumber = Control.<String>empty();
         var lastNumber = "";
 
         var parsing = line;
         while (!parsing.isEmpty()) {
             for (var entry : map.entrySet()) {
                 if (parsing.startsWith(entry.getKey())) {
-                    if (firstNumber.isEmpty()) {
-                        firstNumber = Optional.of(entry.getValue());
+                    if (firstNumber instanceof Control.None<String>) {
+                        firstNumber = Control.of(entry.getValue());
                     } else {
                         lastNumber = entry.getValue();
                     }
